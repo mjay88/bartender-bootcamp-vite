@@ -1,0 +1,6 @@
+//overwrite theme variables
+$dark: black;
+//import bootstrap styles at the bottom
+@import "~bootstrap/scss/bootstrap.scss";
+// @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "react-bootstrap-sidebar-menu/dist/sidebar-menu.scss";

@@ -5,7 +5,13 @@ import logo from "../assets/images/Logo.png";
 const Header = () => {
 	return (
 		<header>
-			<Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+			<Navbar
+				className="flex-column"
+				bg="dark"
+				variant="dark"
+				expand="lg"
+				collapseOnSelect
+			>
 				<Container>
 					<Navbar.Brand href="/">
 						<img src={logo}></img>
