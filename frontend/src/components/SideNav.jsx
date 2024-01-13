@@ -1,33 +1,16 @@
-import { Accordion, Navbar, Col } from "react-bootstrap";
+import { Accordion, Navbar, Col, Container } from "react-bootstrap";
 import Sidebar from "react-bootstrap-sidebar-menu";
 import React from "react";
 
 const SideNav = () => {
 	return (
-		// <Navbar className="flex-column" expand="xs" collapseOnSelect>
-		// 	<Col md={2}>
-		// 		<Accordion>
-		// 			<Accordion.Item eventKey="0">
-		// 				<Accordion.Header>Vodka</Accordion.Header>
-		// 				<Accordion.Body>History of Vodka</Accordion.Body>
-		// 				<Accordion.Body>How Its Made</Accordion.Body>
-		// 				<Accordion.Body>Tasting and Serving Vodka</Accordion.Body>
-		// 			</Accordion.Item>
-		// 			<Accordion.Item eventKey="1">
-		// 				<Accordion.Header>Gin</Accordion.Header>
-		// 				<Accordion.Body>Gin</Accordion.Body>
-		// 			</Accordion.Item>
-		// 			<Accordion.Item eventKey="2">
-		// 				<Accordion.Header>Rum</Accordion.Header>
-		// 				<Accordion.Body>Rum</Accordion.Body>
-		// 			</Accordion.Item>
-		// 		</Accordion>
-		// 	</Col>
-		// </Navbar>
-		<Sidebar variant="dark" bg="dark" expand="sm">
+		<Sidebar variant="dark" bg="dark" expand="true">
 			<Sidebar.Collapse getScrollValue={500}>
 				<Sidebar.Header>
-					<Sidebar.Brand>Logo</Sidebar.Brand>
+					{/* <Container>
+						<h4>Categories</h4>
+					</Container> */}
+					<Sidebar.Brand>Categories</Sidebar.Brand>
 					<Sidebar.Toggle />
 				</Sidebar.Header>
 				<Sidebar.Body>
