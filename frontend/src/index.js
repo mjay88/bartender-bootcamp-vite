@@ -6,11 +6,15 @@ import "./assets/styles/index.css";
 import "./assets/styles/custom.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { router } from "./router";
+import { RouterProvider } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<App />
+		<RouterProvider router={router}>
+			<App />
+		</RouterProvider>
 	</React.StrictMode>
 );
 
