@@ -16,33 +16,6 @@ const SideNav = ({ menuItems }) => {
 				</Sidebar.Header>
 
 				<Sidebar.Body>
-					{/* <Sidebar.Nav>
-						<Sidebar.Nav.Link eventKey="menu_title">
-							<Sidebar.Nav.Icon>1</Sidebar.Nav.Icon>
-							<Sidebar.Nav.Title>Menu Title</Sidebar.Nav.Title>
-						</Sidebar.Nav.Link>
-						<Sidebar.Sub eventKey={0}>
-							<Sidebar.Sub.Toggle>
-								<Sidebar.Nav.Icon />
-								<Sidebar.Nav.Title>Submenu</Sidebar.Nav.Title>
-							</Sidebar.Sub.Toggle>
-							<Sidebar.Sub.Collapse>
-								<Sidebar.Nav>
-									<Sidebar.Nav.Link eventKey="sum_menu_title">
-										<Link to="/vodka">
-											<Sidebar.Nav.Icon>1.1</Sidebar.Nav.Icon>
-											<Sidebar.Nav.Title>Sub menu item</Sidebar.Nav.Title>
-										</Link>
-									</Sidebar.Nav.Link>
-								</Sidebar.Nav>
-								<Sidebar.Sub.Toggle>
-									<Sidebar.Nav.Icon />
-									<Sidebar.Nav.Title>Submenu</Sidebar.Nav.Title>
-								</Sidebar.Sub.Toggle>
-							</Sidebar.Sub.Collapse>
-						</Sidebar.Sub>
-					</Sidebar.Nav> */}
-
 					<SidebarItems menuItems={menuItems} />
 				</Sidebar.Body>
 			</Sidebar.Collapse>
@@ -51,11 +24,12 @@ const SideNav = ({ menuItems }) => {
 };
 
 const SidebarItems = ({ menuItems }) => {
+	// console.log(menuItems, "menuItems");
 	return (
 		<>
 			{menuItems.map((item, idx) => {
 				return (
-					<Sidebar.Nav>
+					<Sidebar.Nav key={idx}>
 						<Sidebar.Sub eventKey={0}>
 							<Sidebar.Sub.Toggle>
 								<Sidebar.Nav.Icon />

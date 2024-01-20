@@ -1,5 +1,6 @@
+import { ListGroupItem } from "react-bootstrap";
+
 export const menuItems = [
-	//whats the deal with the back slashes?
 	{
 		title: "Vodka",
 		// url: "/vodka",
@@ -7,24 +8,60 @@ export const menuItems = [
 			{
 				title: "History of Vodka",
 				url: "history-of-vodka",
+				images: [
+					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+					"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+					"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg.jpg",
+				],
+				content: [
+					"Vodka, a clear distilled alcoholic beverage, originates from Eastern Europe. Its name, derived from the Slavic word 'voda' (meaning 'water'), reflects its essential, pure nature. Renowned for its versatility, vodka serves as a base for numerous cocktails and is enjoyed worldwide.",
+					"The creation of vodka traces back to the 9th century in Russia and the 8th century in Poland. Initially used for medicinal purposes, it gradually gained popularity as a beverage.",
+					"By the 14th century, vodka established itself as a national drink in Russia and Poland. The 18th century saw the establishment of state vodka monopolies in Russia, enhancing its quality and production standards. Post World War II, vodka's popularity soared globally, especially in America.",
+				],
 			},
 			{
 				title: "Production of Vodka",
-				url: "/production-of-vodka",
+				url: "production-of-vodka",
+				content: [
+					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
+					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
+					"Unlike many spirits, vodka is not aged and is immediately bottled after dilution to the desired proof with water.",
+				],
 			},
 			{
 				title: "Discussing Vodkas Taste and Style",
 				url: "discussing-vodkas-taste-and-style",
+				content: [
+					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
+					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
+					"Unlike many spirits, vodka is not aged and is immediately bottled after dilution to the desired proof with water.",
+				],
 			},
 			{
 				title: "Other Neutral Spirits",
-				url: "other-neutral-spirits",
+				// url: "other-neutral-spirits",
 				submenu: [
-					{ title: "Baijiu, Shochu, and Soju", url: "baijiu-shochu-and-soju" },
+					{
+						title: "Baijiu, Shochu, and Soju",
+						url: "baijiu-shochu-and-soju",
+						content: [
+							"Baijiu, the national drink of China, has been produced since the 13th century. Originally used in rituals, it's deeply integrated into Chinese culture.",
+							"Made from sorghum or other grains, Baijiu undergoes a unique fermentation process in solid-state, using natural ferments.",
+							"It has a strong, complex flavor, varying greatly based on production regions and methods.",
+							"Shochu, a Japanese spirit, dates back to the 15th century. It was originally a drink for farmers.",
+							"Distilled from barley, rice, sweet potatoes, or buckwheat, Shochu is typically single-distilled, retaining a robust flavor.",
+							"Shochu offers a diverse flavor profile, from light and fruity to rich and nutty, depending on the base ingredient and distillation.",
+							"Soju, a Korean spirit, has been popular since the 13th century, initially distilled by Mongol invaders.",
+							"Traditionally made from rice, modern Soju often uses other starches like wheat, barley, or tapioca.",
+							"Soju is lighter in alcohol than vodka, with a gentle, slightly sweet flavor.",
+						],
+					},
 				],
 			},
-			{ title: "Tasting And Serving Vodka" },
 		],
+		//images will be saved in local file
 	},
 	{
 		title: "Gin",

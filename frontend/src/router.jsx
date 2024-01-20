@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
+import Content from "./components/Content";
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
-		children: [
-			{ path: "/vodka", element: <h1>Vodka</h1> },
-			{ path: "/whiskey", element: <h1>Whiskey</h1> },
-		],
+		errorElement: <h1>Error, unfortunately that path leads to no where...</h1>,
+		children: [{ path: "/:sectionId", element: <Content /> }],
 	},
 ]);

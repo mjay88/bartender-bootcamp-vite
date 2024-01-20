@@ -49,3 +49,68 @@ body,
 	grid-area: sidebar;
 	overflow-y: auto;
 }
+
+.custom-grid-1 {
+	display: grid;
+	grid-gap: 25px;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"paragraph image"
+		"paragraph paragraph"
+		"paragraph paragraph"
+		"image paragraph"
+		"paragraph paragraph";
+	grid-auto-flow: row dense;
+
+	.paragraph {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	/*8 paragraphs */
+	//1
+	.paragraph:nth-of-type(8n + 1) {
+		grid-area: auto / paragraph;
+	}
+	//2
+	.paragraph:nth-of-type(8n + 2) {
+		grid-area: auto / paragraph;
+	}
+	//3
+	.paragraph:nth-of-type(8n + 3) {
+		grid-area: auto / paragraph;
+	}
+	//4
+	.paragraph:nth-of-type(8n + 4) {
+		grid-area: auto / paragraph;
+	}
+	//5
+	.paragraph:nth-of-type(8n + 5) {
+		grid-area: auto / paragraph;
+	}
+	//6
+	.paragraph:nth-of-type(8n + 6) {
+		grid-area: auto / paragraph;
+	}
+	//7
+	.paragraph:nth-of-type(8n + 7) {
+		grid-area: auto / paragraph;
+	}
+	//8
+	.paragraph:nth-of-type(8n + 8) {
+		grid-area: auto / paragraph;
+	}
+
+	.image {
+		width: 400px;
+		height: auto;
+	}
+
+	.image:nth-of-type(2n + 1) {
+		grid-area: auto / image;
+	}
+
+	.image:nth-of-type(2n + 2) {
+		grid-area: auto / image;
+	}
+}
