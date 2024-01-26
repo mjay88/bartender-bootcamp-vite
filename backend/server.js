@@ -1,8 +1,9 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import { menuItems } from "./data/menuItems.js";
 import recursiveSearch from "./utils/recursiveSearch.js";
-
-const port = 5000;
+const port = process.env.PORT || 5000;
 const app = express();
 
 // app.get("/", (req, res) => {
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 
 app.get("/:sectionId", (req, res) => {
 	const section = recursiveSearch(menuItems, req.params.sectionId);
+	console.log(section, "section");
 	res.json(section);
 });
 

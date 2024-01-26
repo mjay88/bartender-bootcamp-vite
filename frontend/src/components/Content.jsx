@@ -2,8 +2,21 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { menuItems } from "../menuItems";
 import Grid from "./Grid";
+import axios from "axios";
 export default function Content() {
+	const [content, setContent] = useState([]);
 	const { sectionId } = useParams();
+	console.log(sectionId, "sectionId");
+
+	useEffect(() => {
+		const fetchContent = async () => {
+			const { data } = await axios.get(`/${sectionId}`);
+			console.log(data, "inside fetchContent");
+			setContent(data);
+		};
+
+		fetchContent();
+	}, [sectionId]);
 
 	// console.log(sectionId, "sectionId from content.jsx");
 	const recursiveSearch = useCallback(
@@ -32,7 +45,7 @@ export default function Content() {
 		[menuItems, sectionId]
 	);
 
-	const content = recursiveSearch(menuItems, sectionId);
+	// const content = recursiveSearch(menuItems, sectionId);
 	console.log(content, "content");
 
 	// function recursiveSearch(menuItems, sectionId) {
