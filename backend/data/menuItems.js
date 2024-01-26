@@ -1,5 +1,3 @@
-import { ListGroupItem } from "react-bootstrap";
-
 export const menuItems = [
 	{
 		title: "Vodka",
