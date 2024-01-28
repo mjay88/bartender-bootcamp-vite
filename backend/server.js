@@ -2,8 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import { menuItems } from "./data/menuItems.js";
+import connectDB from "./config/db.js";
 import recursiveSearch from "./utils/recursiveSearch.js";
 const port = process.env.PORT || 5000;
+
+connectDB();
+
 const app = express();
 
 // app.get("/", (req, res) => {
