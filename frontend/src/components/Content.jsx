@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { menuItems } from "../menuItems";
 import Grid from "./Grid";
 import axios from "axios";
+
 export default function Content() {
 	const [content, setContent] = useState([]);
 	const { sectionId } = useParams();

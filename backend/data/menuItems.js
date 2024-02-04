@@ -28,6 +28,13 @@ export const menuItems = [
 			{
 				title: "Production of Vodka",
 				url: "production-of-vodka",
+				images: [
+					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+					"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+					"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+				],
 				content: [
 					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
 					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
@@ -37,6 +44,13 @@ export const menuItems = [
 			{
 				title: "Discussing Vodkas Taste and Style",
 				url: "discussing-vodkas-taste-and-style",
+				images: [
+					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+					"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+					"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+				],
 				content: [
 					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
 					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
@@ -50,6 +64,13 @@ export const menuItems = [
 					{
 						title: "Baijiu, Shochu, and Soju",
 						url: "baijiu-shochu-and-soju",
+						images: [
+							"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+							"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+							"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+							"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+							"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+						],
 						content: [
 							"Baijiu, the national drink of China, has been produced since the 13th century. Originally used in rituals, it's deeply integrated into Chinese culture.",
 							"Made from sorghum or other grains, Baijiu undergoes a unique fermentation process in solid-state, using natural ferments.",
@@ -69,31 +90,81 @@ export const menuItems = [
 	},
 	{
 		title: "Gin",
-		// url: "/gin",
 		submenu: [
+			{
+				title: "History of Gin",
+				url: "history-of-gin",
+				images: [
+					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+					"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+					"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+				],
+				content: [
+					"Gin, a juniper-flavored spirit, began its journey in the Middle Ages as an herbal medicine before evolving into the popular spirit it is today. Originating from the Netherlands in the 17th century, it was known as jenever and was prized for its medicinal properties.",
+					"The spirit's popularity surged in England in the 18th century, leading to the infamous Gin Craze. The British government eventually imposed regulations to curb gin consumption, leading to the development of more refined and high-quality gin varieties.",
+					"The invention of the continuous still in the 19th century by Aeneas Coffey revolutionized gin production, making it easier to produce a cleaner and purer spirit. This technological advancement paved the way for the creation of the London Dry style, one of the most popular gin types today.",
+					"Gin played a significant role in British colonial history, with the Gin and Tonic becoming a staple drink in the tropics, thanks to its mix with quinine to ward off malaria. Today, gin is celebrated for its versatility and is a key ingredient in many classic cocktails.",
+				],
+			},
 			{
 				title: "Production of Gin",
 				url: "production-of-gin",
+				images: [
+					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+					"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+					"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+				],
+				content: [
+					"Gin production begins with a neutral base spirit, usually made from grain, which is then redistilled with juniper berries and other botanicals to infuse it with flavor. The choice and combination of botanicals vary among producers, creating a wide range of gin flavors.",
+					"There are several methods for infusing the spirit with botanicals, the most common being pot distillation and vapor infusion. In pot distillation, botanicals are soaked in the spirit before distillation; in vapor infusion, botanicals are placed in a basket through which the spirit vapor passes.",
+					"After distillation, the gin is diluted with water to the desired strength, usually between 37.5% and 50% alcohol by volume. Some gins are aged in barrels to add complexity, though most are bottled and sold clear.",
+				],
 			},
 			{
-				title: "Leading Styles of Gin",
-				url: "leading-styles-of-gin",
+				title: "Gin Taste and Styles",
+				url: "gin-taste-and-styles",
+				images: [
+					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+					"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+					"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+				],
+				content: [
+					"The defining flavor of gin comes from juniper berries, but a wide variety of botanicals can be used to add unique notes, such as citrus peel, coriander seeds, angelica root, and orris root. This results in a spectrum of gin styles, from floral to spicy to herbal.",
+					"London Dry Gin is known for its crisp, clean taste with a strong juniper flavor. In contrast, Old Tom Gin is slightly sweeter, often considered a bridge between Dutch Jenever and London Dry Gin.",
+					"Contemporary or New Western Dry Gins place less emphasis on juniper and more on other botanicals, leading to a wide range of flavors that challenge traditional perceptions of what gin can be.",
+					"Gin's versatility makes it a favorite among bartenders, serving as the foundation for numerous cocktails, from the dry martini to the refreshing gin and tonic.",
+				],
 			},
 			{
-				title: "Other Flavored Spirits",
-				url: "other-flavored-spirits",
+				title: "Other Neutral Spirits",
+				url: "other-neutral-spirits",
 				submenu: [
 					{
-						title: "Juniper Flavored Spirit Drinks",
-						url: "juniper-flavored-spirit-drinks",
-					},
-					{
-						title: "Anise Flavored Spirit Drinks",
-						url: "anise-flavored-spirit-drinks",
+						title: "Comparing Gin with Other Spirits",
+						url: "comparing-gin-with-other-spirits",
+						images: [
+							"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
+							"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
+							"/images/vodka/hai-nguyen-LSZfNPVZjTw-unsplash.jpg",
+							"/images/vodka/paul-einerhand-8xwPoO2rLRM-unsplash.jpg",
+							"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
+						],
+						content: [
+							"While gin is celebrated for its botanical complexity, it shares the distilled spirits category with other notable beverages, each with its own unique production process and flavor profile.",
+							"Vodka, for example, is known for its purity and neutrality, making it a versatile base for cocktails, whereas gin is appreciated for its aromatic botanicals.",
+							"Rum, distilled from sugarcane or molasses, offers a sweet and often spiced profile, contrasting with gin's herbal and juniper-forward character.",
+							"Whiskey, produced from fermented grain mash and aged in wooden casks, showcases a depth of flavor from its aging process, differing from gin's typically unaged nature.",
+							"Each spirit brings its own unique qualities to the table, making the world of distilled beverages rich and diverse.",
+						],
 					},
 				],
 			},
-			{ title: "Tasting And Serving Gin" },
 		],
 	},
 	{

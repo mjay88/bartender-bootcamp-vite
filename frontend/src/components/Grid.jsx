@@ -5,10 +5,40 @@ export default function Grid({ paragraphs, images }) {
 		<div className="custom-grid-1">
 			{paragraphs?.map((paragraph, idx) => (
 				<>
-					<p className={`paragraph paragraph${idx + 1}`}>{paragraph}</p>
-					<img className={`image image${idx + 1}`} src={images[idx]} alt="" />
+					<p className={`paragraph paragraph${idx}`}>{paragraph}</p>
+					<img className={`image image${idx}`} src={images[idx]} alt="" />
+					{/* <p className={`paragraph`}>{paragraph}</p> */}
 				</>
 			))}
+			{/* {images?.map((image, idx) => (
+				<>
+					<img className={`image`} src={image} alt="" />
+				</>
+			))} */}
 		</div>
 	);
+	// return (
+	// 	<div className="custom-grid-1">
+	// 		{paragraphs?.map((paragraph, idx, paragraphsArray) => {
+	// 			if (idx >= 8) {
+	// 				return (
+	// 					<>
+	// 						<Grid
+	// 							paragraphs={paragraphsArray.slice(8)}
+	// 							images={images.slice(5)}
+	// 						/>
+	// 					</>
+	// 				);
+	// 			} else {
+	// 				return (
+	// 					<>
+	// 						<p className={`paragraph paragraph${idx}`}>{paragraph}</p>
+	// 						<img className={`image image${idx}`} src={images[idx]} alt="" />
+	// 						{/* <p className={`paragraph`}>{paragraph}</p> */}
+	// 					</>
+	// 				);
+	// 			}
+	// 		})}
+	// 	</div>
+	// );
 }
