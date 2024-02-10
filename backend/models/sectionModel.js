@@ -12,10 +12,11 @@ import mongoose from "mongoose";
 const sectionSchema = new mongoose.Schema({
 	title: String,
 	url: String,
-	images: [{ url: String }],
-	content: [{ url: String }],
+	key: String,
+	images: [{ url: String, secure_url: String }],
+	// content: [{ url: String }],
 	//maybe just this one below is easier?
-	// content: [String],
+	content: [String],
 	completed: { type: Boolean, default: false },
 });
 

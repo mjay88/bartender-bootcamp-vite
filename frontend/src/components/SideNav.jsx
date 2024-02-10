@@ -34,7 +34,7 @@ const SidebarItems = ({ menuItems }) => {
 							<Sidebar.Sub.Toggle>
 								<Sidebar.Nav.Icon />
 								{item.url ? (
-									<Link to={item.url}>
+									<Link to={`/sections/${item.url}`}>
 										<Sidebar.Nav.Title>{item.title}</Sidebar.Nav.Title>
 									</Link>
 								) : (

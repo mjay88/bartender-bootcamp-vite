@@ -7,6 +7,6 @@ export const router = createBrowserRouter([
 		path: "/",
 		element: <App />,
 		errorElement: <h1>Error, unfortunately that path leads to no where...</h1>,
-		children: [{ path: "/:sectionId", element: <Content /> }],
+		children: [{ path: "sections/:sectionId", element: <Content /> }],
 	},
 ]);
