@@ -4,6 +4,7 @@ dotenv.config();
 // import { menuItems } from "./data/menuItems.js";
 import connectDB from "./config/db.js";
 // import recursiveSearch from "./utils/recursiveSearch.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import sectionRoutes from "./routes/sectionRoutes.js";
 const port = process.env.PORT || 5000;
 
@@ -16,5 +17,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/sections", sectionRoutes);
+
+//use errorMiddleware
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -1,84 +1,43 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { useGetSectionByUrlQuery } from "../slices/sectionsApiSlice";
 import { useParams } from "react-router-dom";
 // import { menuItems } from "../menuItems";
 import Grid from "./Grid";
 import axios from "axios";
 
 export default function Content() {
-	const [content, setContent] = useState({});
+	// const [content, setContent] = useState({});
 	const { sectionId } = useParams();
 	console.log(sectionId, "sectionId");
+	const {
+		data: content,
+		isLoading,
+		error,
+	} = useGetSectionByUrlQuery(sectionId);
 
-	useEffect(() => {
-		const fetchContent = async () => {
-			const { data } = await axios.get(`/sections/${sectionId}`);
-			console.log(data, "inside fetchContent");
-			setContent(data);
-		};
+	// useEffect(() => {
+	// 	const fetchContent = async () => {
+	// 		const { data } = await axios.get(`/sections/${sectionId}`);
+	// 		console.log(data, "inside fetchContent");
+	// 		setContent(data);
+	// 	};
 
-		fetchContent();
-	}, [sectionId]);
+	// 	fetchContent();
+	// }, [sectionId]);
 
-	// console.log(sectionId, "sectionId from content.jsx");
-	// const recursiveSearch = useCallback(
-	// 	(menuItems, sectionId) => {
-	// 		let result = [];
-
-	// 		for (let item of menuItems) {
-	// 			if (item.submenu) {
-	// 				for (let submenuItem of item.submenu) {
-	// 					if (submenuItem.url === sectionId) {
-	// 						if (submenuItem.images) {
-	// 							result = [submenuItem.content, submenuItem.images];
-	// 						} else {
-	// 							result = [submenuItem.content];
-	// 						}
-	// 						return result;
-	// 					} else if (submenuItem.submenu && result.length === 0) {
-	// 						result = recursiveSearch(submenuItem.submenu, sectionId);
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-
-	// 		return result;
-	// 	},
-	// 	[menuItems, sectionId]
-	// );
-
-	// const content = recursiveSearch(menuItems, sectionId);
 	console.log(content, "content");
 
-	// function recursiveSearch(menuItems, sectionId) {
-	// 	let result = [];
-
-	// 	for (let item of menuItems) {
-	// 		if (item.submenu) {
-	// 			for (let submenuItem of item.submenu) {
-	// 				if (submenuItem.url === sectionId) {
-	// 					if (submenuItem.images) {
-	// 						result = [submenuItem.content, submenuItem.images];
-	// 					} else {
-	// 						result = [submenuItem.content];
-	// 					}
-	// 					return result;
-	// 				} else if (submenuItem.submenu && result.length === 0) {
-	// 					result = recursiveSearch(submenuItem.submenu, sectionId);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-
-	// 	return result;
-	// }
-
-	//trying to get data in right format, backend working.
 	return (
 		<div>
 			Content for {sectionId}
 			<>
-				<Grid paragraphs={content.content} images={content.images} />
-				{null}
+				{isLoading ? (
+					<h1>Loading...</h1>
+				) : error ? (
+					<div>{error?.data?.message || error.error}</div>
+				) : (
+					<Grid paragraphs={content.content} images={content.images} />
+				)}
 			</>
 		</div>
 	);
