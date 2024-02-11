@@ -1,12 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
 import { useGetSectionByUrlQuery } from "../slices/sectionsApiSlice";
 import { useParams } from "react-router-dom";
-// import { menuItems } from "../menuItems";
+import Loader from "./Loader";
+import Message from "./Message";
 import Grid from "./Grid";
-import axios from "axios";
 
 export default function Content() {
-	// const [content, setContent] = useState({});
 	const { sectionId } = useParams();
 	console.log(sectionId, "sectionId");
 	const {
@@ -15,16 +13,6 @@ export default function Content() {
 		error,
 	} = useGetSectionByUrlQuery(sectionId);
 
-	// useEffect(() => {
-	// 	const fetchContent = async () => {
-	// 		const { data } = await axios.get(`/sections/${sectionId}`);
-	// 		console.log(data, "inside fetchContent");
-	// 		setContent(data);
-	// 	};
-
-	// 	fetchContent();
-	// }, [sectionId]);
-
 	console.log(content, "content");
 
 	return (
@@ -32,9 +20,11 @@ export default function Content() {
 			Content for {sectionId}
 			<>
 				{isLoading ? (
-					<h1>Loading...</h1>
+					<Loader />
 				) : error ? (
-					<div>{error?.data?.message || error.error}</div>
+					<Message variant="danger">
+						{error?.data?.message || error.error}
+					</Message>
 				) : (
 					<Grid paragraphs={content.content} images={content.images} />
 				)}

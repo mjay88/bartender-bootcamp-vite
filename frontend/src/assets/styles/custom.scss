@@ -339,3 +339,34 @@ body,
 		grid-row: 8 / 9;
 	}
 }
+
+.answer {
+	cursor: pointer;
+	padding: 5px;
+	margin: 0;
+	border: 2px solid transparent; /*to prevent borders from moving content*/
+}
+
+.answer::before {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	padding: 1px;
+	border: 1px solid black;
+	border-radius: 50%;
+	margin-right: 5px;
+	padding: 2px;
+}
+
+.answer.correct::before,
+.answer.incorrect::before {
+	background: black content-box;
+}
+
+.correct {
+	border: 3px solid green;
+}
+.incorrect {
+	border: 3px solid red;
+}

@@ -5,11 +5,8 @@ dotenv.config({ path: "../.env" }); //might cause issues when we configure varia
 //set the config on our cloudinary
 cloudinary.config({
 	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-	// cloud_name: "dqlkngbnx",
 	api_key: process.env.CLOUDINARY_KEY,
-	// api_key: "935779924135472",
 	api_secret: process.env.CLOUDINARY_SECRET,
-	// api_secret: "I7Nx8jA1gG3Ey1P7cZC0vZh7z1A",
 	secure: true,
 });
 

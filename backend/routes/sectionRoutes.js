@@ -1,9 +1,10 @@
 import express from "express";
 const router = express.Router();
+// import { quizzes, quizzes } from "../data/quizzes.js";
 // import { menuItems } from "../data/menuItems.js";
 // import recursiveSearch from "../utils/recursiveSearch.js";
 // import asyncHandler from "../middleware/asyncHandler.js";
-import Section from "../models/sectionModel.js";
+
 import {
 	getSections,
 	getSectionByUrl,
@@ -19,6 +20,21 @@ import {
 
 router.route("/").get(getSections);
 router.route("/:sectionId").get(getSectionByUrl);
+
+// router.get(
+// 	"/quizzes/:sectionKey",
+// 	asyncHandler(async (req, res) => {
+// 		// const section = recursiveSearch(menuItems, req.params.sectionId);
+// 		const quizzes = quizzes;
+
+// 		if (quizzes) {
+// 			return res.json(quizzes);
+// 		} else {
+// 			res.status(404);
+// 			throw new Error("Quiz not found");
+// 		}
+// 	})
+// );
 
 // router.get(
 // 	"/:sectionId",
