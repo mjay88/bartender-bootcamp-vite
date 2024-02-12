@@ -2,9 +2,11 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import colors from "colors";
 import users from "./data/users.js";
+import { quizzes } from "./data/quizzes.js";
 import { menuItems } from "./data/menuItems.js";
 import User from "./models/userModel.js";
 import Section from "./models/sectionModel.js";
+import Quiz from "./models/quizModel.js";
 import connectDB from "./config/db.js";
 import cloudinary from "../Cloudinary/index.js";
 // import { v2 as cloudinary } from "cloudinary";
@@ -41,9 +43,10 @@ const importData = async () => {
 		//clear the data base
 		await User.deleteMany();
 		await Section.deleteMany();
+		await Quiz.deleteMany();
 
 		const createdUsers = await User.insertMany(users);
-
+		const createdQuizzes = await Quiz.insertMany(quizzes);
 		const sections = recursiveFlatten(menuItems);
 		// console.log(sections, "sections");
 		const cloudinaryImagesResponse = sections.map(async (section) => {
@@ -83,7 +86,7 @@ const importData = async () => {
 		process.exit(1);
 	}
 };
-// importData();
+importData();
 
 const destroyData = async () => {
 	try {

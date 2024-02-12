@@ -17,13 +17,34 @@ app.get("/", (req, res) => {
 	res.send("API is running...");
 });
 
+// app.get("sections/quiz/:sectionKey", (req, res) => {
+// 	// console.log(req.params.sectionKey, "section key");
+// 	// console.log(quizzes, "quizzes");
+// 	// const section = quizzes.find(
+// 	// 	({ quiz }) => (quiz.sectionKey = req.params.sectionKey)
+// 	// );
+// 	// const { quiz } = section;
+// 	// // const key = req.params.sectionKey;
+// 	// res.json(quiz);
+// 	const key = req.params.sectionKey;
+// 	res.send(key);
+// });
 app.use("/sections", sectionRoutes);
 
-app.get("/quiz", (req, res) => {
-	const quiz = quizzes;
-	console.log(quiz, "section");
-	res.json(quiz);
-});
+//this isn't returning the right quiz, only the vodka quiz?????????????????
+//quizzes .find not working?
+// app.get("/quiz/:sectionKey", (req, res) => {
+// 	console.log(req.params.sectionKey, "req.params 35");
+// 	const section = quizzes.find(
+// 		({ quiz }) => (quiz.sectionKey = req.params.sectionKey)
+// 	);
+// 	console.log(section, "section");
+// 	const { quiz } = section;
+// 	console.log(quiz, "actual quiz*************************");
+// 	res.json(quiz);
+// });
+
+// `quiz/${sectionKey}`
 
 //use errorMiddleware
 app.use(notFound);

@@ -15,8 +15,16 @@ export const sectionsApiSlice = apiSlice.injectEndpoints({
 			}),
 			keepUnusedDataFor: 5,
 		}),
+		getQuizBySectionKey: builder.query({
+			query: (sectionKey) => ({
+				url: `${SECTIONS_URL}/quiz/${sectionKey}`,
+			}),
+		}),
 	}),
 });
 
-export const { useGetSectionsQuery, useGetSectionByUrlQuery } =
-	sectionsApiSlice;
+export const {
+	useGetSectionsQuery,
+	useGetSectionByUrlQuery,
+	useGetQuizBySectionKeyQuery,
+} = sectionsApiSlice;

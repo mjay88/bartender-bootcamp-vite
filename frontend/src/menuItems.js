@@ -6,6 +6,7 @@ export const menuItems = [
 			{
 				title: "History of Vodka",
 				url: "history-of-vodka",
+				key: "vodka",
 				images: [
 					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
@@ -28,6 +29,8 @@ export const menuItems = [
 			{
 				title: "Production of Vodka",
 				url: "production-of-vodka",
+				key: "vodka",
+
 				images: [
 					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
@@ -44,6 +47,8 @@ export const menuItems = [
 			{
 				title: "Discussing Vodkas Taste and Style",
 				url: "discussing-vodkas-taste-and-style",
+				key: "vodka",
+
 				images: [
 					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 					"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
@@ -64,6 +69,8 @@ export const menuItems = [
 					{
 						title: "Baijiu, Shochu, and Soju",
 						url: "baijiu-shochu-and-soju",
+						key: "vodka",
+
 						images: [
 							"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 							"/images/vodka/evi-radauscher-NLlvBb9sLts-unsplash.jpg",
@@ -85,6 +92,7 @@ export const menuItems = [
 					},
 				],
 			},
+			{ title: "Vodka Quiz", url: "quiz/vodka" },
 		],
 		//images will be saved in local file
 	},
@@ -94,6 +102,8 @@ export const menuItems = [
 			{
 				title: "History of Gin",
 				url: "history-of-gin",
+				key: "gin",
+
 				images: [
 					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 					"/images/gin/mockupo-nOyjlj-dse0-unsplash.jpg",
@@ -124,6 +134,8 @@ export const menuItems = [
 			{
 				title: "Production of Gin",
 				url: "production-of-gin",
+				key: "gin",
+
 				images: [
 					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 					"/images/gin/mockupo-nOyjlj-dse0-unsplash.jpg",
@@ -146,6 +158,8 @@ export const menuItems = [
 			{
 				title: "Gin Taste and Styles",
 				url: "gin-taste-and-styles",
+				key: "gin",
+
 				images: [
 					"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 					"/images/gin/mockupo-nOyjlj-dse0-unsplash.jpg",
@@ -167,6 +181,8 @@ export const menuItems = [
 					{
 						title: "Comparing Gin with Other Spirits",
 						url: "comparing-gin-with-other-spirits",
+						key: "gin",
+
 						images: [
 							"/images/vodka/avinash-kumar-OvUAL6Vx3uY-unsplash.jpg",
 							"/images/gin/mockupo-nOyjlj-dse0-unsplash.jpg",
@@ -184,6 +200,7 @@ export const menuItems = [
 					},
 				],
 			},
+			{ title: "Gin Quiz", url: "quiz/gin" },
 		],
 	},
 	{
@@ -192,6 +209,7 @@ export const menuItems = [
 			{
 				title: "History of Whiskey",
 				url: "history-of-whiskey",
+				key: "whiskey",
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -218,6 +236,8 @@ export const menuItems = [
 			{
 				title: "Production of Whiskey",
 				url: "production-of-whiskey",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -239,6 +259,8 @@ export const menuItems = [
 			{
 				title: "Scotch Whiskey",
 				url: "scotch-whiskey",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -260,6 +282,8 @@ export const menuItems = [
 			{
 				title: "Irish Whiskey",
 				url: "irish-whiskey",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -284,6 +308,8 @@ export const menuItems = [
 					{
 						title: "History of American Whiskey",
 						url: "history-of-american-whiskey",
+						key: "whiskey",
+
 						images: [
 							"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 							"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -305,6 +331,8 @@ export const menuItems = [
 					{
 						title: "Bourbon Whiskey",
 						url: "bourbon-whiskey",
+						key: "whiskey",
+
 						images: [
 							"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 							"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -326,6 +354,8 @@ export const menuItems = [
 					{
 						title: "Tennessee Whiskey",
 						url: "tennesse-whiskey",
+						key: "whiskey",
+
 						images: [
 							"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 							"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -347,6 +377,8 @@ export const menuItems = [
 					{
 						title: "American Straight Whiskeys",
 						url: "american-straight-whiskeys",
+						key: "whiskey",
+
 						images: [
 							"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 							"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -370,6 +402,8 @@ export const menuItems = [
 			{
 				title: "Canadian Whiskies",
 				url: "canadian-whiskey",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -391,6 +425,8 @@ export const menuItems = [
 			{
 				title: "Japanese Whisky",
 				url: "japanese-whisky",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -412,6 +448,8 @@ export const menuItems = [
 			{
 				title: "Indian Whisky",
 				url: "indian-whisky",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -433,6 +471,8 @@ export const menuItems = [
 			{
 				title: "Whiskeys from around the World",
 				url: "whiskeys-from-around-the-world",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -454,6 +494,8 @@ export const menuItems = [
 			{
 				title: "Tasting and serving Whiskey",
 				url: "tasting-and-serving-whiskey",
+				key: "whiskey",
+
 				images: [
 					"/images/whiskey/wouter-supardi-salari-HE_MjmWh9eQ-unsplash.jpg",
 					"/images/whiskey/pylyp-sukhenko-ibh9J-fIgZU-unsplash.jpg",
@@ -472,6 +514,7 @@ export const menuItems = [
 					"The culture of whiskey tasting encourages sharing and discovery, with clubs and events fostering a community of knowledgeable enthusiasts.",
 				],
 			},
+			{ title: "Whiskey Quiz", url: "quiz/whiskey" },
 		],
 	},
 
@@ -481,6 +524,8 @@ export const menuItems = [
 			{
 				title: "History of Brandy",
 				url: "history-of-brandy",
+				key: "brandy",
+
 				images: [
 					"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
 					"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
@@ -501,6 +546,8 @@ export const menuItems = [
 			{
 				title: "Production of Brandy",
 				url: "production-of-brandy",
+				key: "brandy",
+
 				images: [
 					"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
 					"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
@@ -528,6 +575,8 @@ export const menuItems = [
 							{
 								title: "The Cognac Region",
 								url: "the-cognac-region",
+								key: "brandy",
+
 								images: [
 									"/images/brandy/reiseuhu-KNyMcBcDEBU-unsplash.jpg",
 									"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
@@ -547,6 +596,8 @@ export const menuItems = [
 							{
 								title: "Production of Cognac",
 								url: "production-of-cognac",
+								key: "brandy",
+
 								images: [
 									"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
 									"/images/brandy/nacho-dominguez-argenta-cCVzi_mKovs-unsplash.jpg",
@@ -580,6 +631,8 @@ export const menuItems = [
 							{
 								title: "The Armagnac Region",
 								url: "the-armagnac-region",
+								key: "brandy",
+
 								images: [
 									"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
 									"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
@@ -599,6 +652,8 @@ export const menuItems = [
 							{
 								title: "Production of Armagnac",
 								url: "production-of-armagnac",
+								key: "brandy",
+
 								images: [
 									"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
 									"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
@@ -624,6 +679,8 @@ export const menuItems = [
 							{
 								title: "History of Pisco",
 								url: "history-of-pisco",
+								key: "brandy",
+
 								images: [
 									"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
 									"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
@@ -643,6 +700,8 @@ export const menuItems = [
 							{
 								title: "Production of Pisco",
 								url: "production-of-pisco",
+								key: "brandy",
+
 								images: [
 									"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
 									"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
@@ -666,6 +725,8 @@ export const menuItems = [
 			{
 				title: "Calvados",
 				url: "calvados",
+				key: "brandy",
+
 				images: [
 					"/images/brandy/anna-kaminova-BhZuCnDp7nU-unsplash.jpg",
 					"/images/brandy/hello-thrive-zfo6udS1Kh0-unsplash.jpg",
@@ -682,6 +743,7 @@ export const menuItems = [
 					"Calvados plays a key role in the culinary tradition of Normandy, used both as a digestif and as an ingredient in cooking, showcasing the versatility of this unique eau-de-vie.",
 				],
 			},
+			{ title: "Brandy Quiz", url: "quiz/brandy" },
 		],
 	},
 	{
@@ -690,6 +752,8 @@ export const menuItems = [
 			{
 				title: "History of Rum",
 				url: "history-of-rum",
+				key: "rum",
+
 				images: [
 					"/images/rum/benjamin-jopen-yVawQyyaovA-unsplash.jpg",
 					"/images/rum/connor-home-35OgJnVH0v4-unsplash.jpg",
@@ -710,6 +774,8 @@ export const menuItems = [
 			{
 				title: "Production of Rum",
 				url: "production-of-rum",
+				key: "rum",
+
 				images: [
 					"/images/rum/jennifer-schmidt-yrNg91a3Opk-unsplash.jpg",
 					"/images/rum/benjamin-jopen-yVawQyyaovA-unsplash.jpg",
@@ -730,6 +796,8 @@ export const menuItems = [
 			{
 				title: "Rhum Agricole",
 				url: "rhum-agricole",
+				key: "rum",
+
 				images: [
 					"/images/rum/victoria-priessnitz-IPuuhSmsFIc-unsplash.jpg",
 					"/images/rum/benjamin-jopen-yVawQyyaovA-unsplash.jpg",
@@ -750,6 +818,8 @@ export const menuItems = [
 			{
 				title: "Rums from around the World",
 				url: "world-rums",
+				key: "rum",
+
 				images: [
 					"/images/rum/benjamin-jopen-yVawQyyaovA-unsplash.jpg",
 					"/images/rum/connor-home-35OgJnVH0v4-unsplash.jpg",
@@ -770,6 +840,8 @@ export const menuItems = [
 			{
 				title: "Tasting and serving Rum",
 				url: "tasting-and-serving-rum",
+				key: "rum",
+
 				images: [
 					"/images/rum/connor-home-35OgJnVH0v4-unsplash.jpg",
 					"/images/rum/jennifer-schmidt-yrNg91a3Opk-unsplash.jpg",
@@ -787,6 +859,7 @@ export const menuItems = [
 					"Rum festivals and tastings offer enthusiasts opportunities to explore the spirit's diversity, engage with producers, and learn about the nuances of rum from around the world.",
 				],
 			},
+			{ title: "Rum Quiz", url: "quiz/rum" },
 		],
 	},
 	{
@@ -795,6 +868,8 @@ export const menuItems = [
 			{
 				title: "History of Agave based Spirits",
 				url: "history-of-agave-based-spirits",
+				key: "tequila",
+
 				images: [
 					"/images/tequila/fred-crandon-fulpvaLUX3A-unsplash.jpg",
 					"/images/tequila/johann-trasch-uE-BD8_Cx18-unsplash.jpg",
@@ -814,11 +889,13 @@ export const menuItems = [
 			},
 			{
 				title: "Tequila",
-				url: "tequila",
+
 				submenu: [
 					{
 						title: "Production of Tequila",
 						url: "production-of-tequila",
+						key: "tequila",
+
 						images: [
 							"/images/tequila/johann-trasch-uE-BD8_Cx18-unsplash.jpg",
 							"/images/tequila/rudy-prather-6sfA_csIgUU-unsplash.jpg",
@@ -838,6 +915,8 @@ export const menuItems = [
 					{
 						title: "The Tequila Producing Region",
 						url: "tequila-producing-region",
+						key: "tequila",
+
 						images: [
 							"/images/tequila/rudy-prather-6sfA_csIgUU-unsplash.jpg",
 							"/images/tequila/taylor-friehl-FDGobgMPR6U-unsplash.jpg",
@@ -857,6 +936,8 @@ export const menuItems = [
 					{
 						title: "Styles of Tequila",
 						url: "styles-of-tequila",
+						key: "tequila",
+
 						images: [
 							"/images/tequila/taylor-friehl-FDGobgMPR6U-unsplash.jpg",
 							"/images/tequila/stephan-hinni-VYIMtHYCee0-unsplash.jpg",
@@ -881,6 +962,8 @@ export const menuItems = [
 					{
 						title: "Production of Mezcal",
 						url: "production-of-mezcal",
+						key: "tequila",
+
 						images: [
 							"/images/tequila/olivia-hutcherson-GP7-I8NZfzQ-unsplash.jpg",
 							"/images/tequila/rudy-prather-6sfA_csIgUU-unsplash.jpg",
@@ -900,6 +983,8 @@ export const menuItems = [
 					{
 						title: "The Mezcal Producing Region",
 						url: "mezcal-producing-region",
+						key: "tequila",
+
 						images: [
 							"/images/tequila/johann-trasch-uE-BD8_Cx18-unsplash.jpg",
 							"/images/tequila/fred-crandon-fulpvaLUX3A-unsplash.jpg",
@@ -918,6 +1003,8 @@ export const menuItems = [
 					{
 						title: "Styles of Mezcal",
 						url: "styles-of-mezcal",
+						key: "tequila",
+
 						images: [
 							"/images/tequila/johann-trasch-uE-BD8_Cx18-unsplash.jpg",
 							"/images/tequila/taylor-friehl-FDGobgMPR6U-unsplash.jpg",
@@ -939,6 +1026,8 @@ export const menuItems = [
 			{
 				title: "Tasting and serving Agave Spirits",
 				url: "tasting-and-serving-agave-spirits",
+				key: "tequila",
+
 				images: [
 					"/images/tequila/fred-crandon-fulpvaLUX3A-unsplash.jpg",
 					"/images/tequila/rudy-prather-6sfA_csIgUU-unsplash.jpg",
@@ -955,6 +1044,7 @@ export const menuItems = [
 					"Agave spirits tastings and educational events provide opportunities for enthusiasts to deepen their understanding of these spirits, exploring the nuances of different styles and production methods.",
 				],
 			},
+			{ title: "Agave Quiz", url: "quiz/agave" },
 		],
 	},
 	{
@@ -963,6 +1053,8 @@ export const menuItems = [
 			{
 				title: "History of Liqueurs",
 				url: "history-of-liqueurs",
+				key: "liqueur",
+
 				images: [
 					"/images/liqueur/alfred-kenneally-CTnoV1vlrnk-unsplash.jpg",
 					"/images/liqueur/annie-spratt-vXA5lhNBusc-unsplash.jpg",
@@ -983,6 +1075,8 @@ export const menuItems = [
 			{
 				title: "Production of Liqueurs",
 				url: "production-of-liqueurs",
+				key: "liqueur",
+
 				images: [
 					"/images/liqueur/alfred-kenneally-CTnoV1vlrnk-unsplash.jpg",
 					"/images/liqueur/annie-spratt-vXA5lhNBusc-unsplash.jpg",
@@ -1003,6 +1097,8 @@ export const menuItems = [
 			{
 				title: "Categorization of Liqueurs",
 				url: "categorization-of-liqueurs",
+				key: "liqueur",
+
 				submenu: [
 					{
 						title: "Essential Liqueurs",
@@ -1028,6 +1124,8 @@ export const menuItems = [
 					{
 						title: "Herbal Liqueurs",
 						url: "herbal-liqueurs",
+						key: "liqueur",
+
 						images: [
 							"/images/liqueur/british-library-MS0JT4RC9Ls-unsplash.jpg",
 							"/images/liqueur/alfred-kenneally-CTnoV1vlrnk-unsplash.jpg",
@@ -1048,6 +1146,8 @@ export const menuItems = [
 					{
 						title: "Bean, Nut, and Seed Liqueurs",
 						url: "bean-nut-and-seed-liqueurs",
+						key: "liqueur",
+
 						images: [
 							"/images/liqueur/annie-spratt-vXA5lhNBusc-unsplash.jpg",
 							"/images/liqueur/bret-lama-VeN9vu4CT1w-unsplash.jpg",
@@ -1068,6 +1168,8 @@ export const menuItems = [
 					{
 						title: "Cream Liqueurs",
 						url: "cream-liqueurs",
+						key: "liqueur",
+
 						images: [
 							"/images/liqueur/jon-meunier-XGonskL5KOE-unsplash.jpg",
 							"/images/liqueur/alfred-kenneally-CTnoV1vlrnk-unsplash.jpg",
@@ -1088,6 +1190,8 @@ export const menuItems = [
 					{
 						title: "Whiskey Liqueurs",
 						url: "whiskey-liqueurs",
+						key: "liqueur",
+
 						images: [
 							"/images/liqueur/ethan-rougon-qv7I1yvF0ik-unsplash.jpg",
 							"/images/liqueur/alfred-kenneally-CTnoV1vlrnk-unsplash.jpg",
@@ -1107,6 +1211,7 @@ export const menuItems = [
 					},
 				],
 			},
+			{ title: "Liqueurs Quiz", url: "quiz/liqueurs" },
 		],
 	},
 
@@ -1116,6 +1221,8 @@ export const menuItems = [
 			{
 				title: "The Taste Component of Bitter",
 				url: "the-taste-component-of-bitter",
+				key: "vermouth",
+
 				images: [
 					"/images/vermouth/simone-garritano-i2AUPaj1iSY-unsplash.jpg",
 					"/images/vermouth/oliver-plattner-yIohcp_m9-k-unsplash.jpg",
@@ -1136,6 +1243,8 @@ export const menuItems = [
 			{
 				title: "Aromatized Wines",
 				url: "aromatized-wines",
+				key: "vermouth",
+
 				images: [
 					"/images/vermouth/markus-winkler-T3sNQb6NUmA-unsplash.jpg",
 					"/images/vermouth/gaby-yerden-frVLSys60ZE-unsplash.jpg",
@@ -1156,6 +1265,8 @@ export const menuItems = [
 			{
 				title: "Vermouth",
 				url: "vermouth",
+				key: "vermouth",
+
 				images: [
 					"/images/vermouth/dan-meyers-OAz8fcWJODg-unsplash.jpg",
 					"/images/vermouth/markus-winkler-T3sNQb6NUmA-unsplash.jpg",
@@ -1176,6 +1287,8 @@ export const menuItems = [
 			{
 				title: "New World Vermouth",
 				url: "new-world-vermouth",
+				key: "vermouth",
+
 				images: [
 					"/images/vermouth/dan-meyers-OAz8fcWJODg-unsplash.jpg",
 					"/images/vermouth/giorgio-trovato--EI-bSCZ17o-unsplash.jpg",
@@ -1196,6 +1309,8 @@ export const menuItems = [
 			{
 				title: "Vini Amari/Bittered Wines",
 				url: "vini-amari-bittered-wines",
+				key: "vermouth",
+
 				images: [
 					"/images/vermouth/dan-meyers-OAz8fcWJODg-unsplash.jpg",
 					"/images/vermouth/martin-adams-5XXfyMMan84-unsplash.jpg",
@@ -1209,6 +1324,8 @@ export const menuItems = [
 					{
 						title: "Quinquina",
 						url: "quinquina",
+						key: "vermouth",
+
 						images: [
 							"/images/vermouth/simone-garritano-i2AUPaj1iSY-unsplash.jpg",
 							"/images/vermouth/dan-meyers-OAz8fcWJODg-unsplash.jpg",
@@ -1228,6 +1345,8 @@ export const menuItems = [
 					{
 						title: "Americano",
 						url: "americano",
+						key: "vermouth",
+
 						images: [
 							"/images/vermouth/martin-adams-5XXfyMMan84-unsplash.jpg",
 							"/images/vermouth/simone-garritano-i2AUPaj1iSY-unsplash.jpg",
@@ -1247,6 +1366,8 @@ export const menuItems = [
 					{
 						title: "Spirit Amari",
 						url: "spirit-amari",
+						key: "vermouth",
+
 						images: [
 							"/images/vermouth/gaby-yerden-frVLSys60ZE-unsplash.jpg",
 							"/images/vermouth/oliver-plattner-yIohcp_m9-k-unsplash.jpg",
@@ -1267,6 +1388,8 @@ export const menuItems = [
 					{
 						title: "French Amer",
 						url: "french-amer",
+						key: "vermouth",
+
 						images: [
 							"/images/vermouth/gaby-yerden-frVLSys60ZE-unsplash.jpg",
 							"/images/vermouth/markus-winkler-T3sNQb6NUmA-unsplash.jpg",
@@ -1287,6 +1410,8 @@ export const menuItems = [
 					{
 						title: "Bittered Spirits of the World",
 						url: "bittered-spirits-of-the-world",
+						key: "vermouth",
+
 						images: [
 							"/images/vermouth/dan-meyers-OAz8fcWJODg-unsplash.jpg",
 							"/images/vermouth/simone-garritano-i2AUPaj1iSY-unsplash.jpg",
@@ -1306,6 +1431,7 @@ export const menuItems = [
 					},
 				],
 			},
+			{ title: "Vermouth Quiz", url: "quiz/vermouth" },
 		],
 	},
 
@@ -1315,6 +1441,8 @@ export const menuItems = [
 			{
 				title: "Modern Cocktology and Craft Cocktails",
 				url: "modern-cocktology-and-craft-cocktails",
+				key: "cocktology",
+
 				images: [
 					"/images/cocktology/adam-jaime-dmkmrNptMpw-unsplash.jpg",
 					"/images/cocktology/adam-jaime-YeH5EIRFCIs-unsplash.jpg",
@@ -1335,6 +1463,8 @@ export const menuItems = [
 			{
 				title: "Key Ingredients for the Bar",
 				url: "key-ingredients-for-the-bar",
+				key: "cocktology",
+
 				images: [
 					"/images/cocktology/adam-jaime-dmkmrNptMpw-unsplash.jpg",
 					"/images/cocktology/adam-jaime-YeH5EIRFCIs-unsplash.jpg",
@@ -1355,6 +1485,8 @@ export const menuItems = [
 			{
 				title: "Professional Bar Equipment",
 				url: "professional-bar-equipment",
+				key: "cocktology",
+
 				images: [
 					"/images/cocktology/adam-jaime-dmkmrNptMpw-unsplash.jpg",
 					"/images/cocktology/adam-jaime-YeH5EIRFCIs-unsplash.jpg",
@@ -1375,6 +1507,8 @@ export const menuItems = [
 			{
 				title: "Bar Terminology",
 				url: "bar-terminology",
+				key: "cocktology",
+
 				images: [
 					"/images/cocktology/adam-jaime-dmkmrNptMpw-unsplash.jpg",
 					"/images/cocktology/adam-jaime-YeH5EIRFCIs-unsplash.jpg",
@@ -1395,6 +1529,8 @@ export const menuItems = [
 			{
 				title: "Methodology",
 				url: "methodology",
+				key: "cocktology",
+
 				images: [
 					"/images/cocktology/adam-jaime-dmkmrNptMpw-unsplash.jpg",
 					"/images/cocktology/adam-jaime-YeH5EIRFCIs-unsplash.jpg",
@@ -1412,6 +1548,7 @@ export const menuItems = [
 					"Continuous learning and experimentation underpin the methodology of modern cocktology, with professionals drawing from a broad palette of traditions, cultures, and innovations to craft memorable drinking experiences.",
 				],
 			},
+			{ title: "Cocktology Quiz", url: "quiz/cocktology" },
 		],
 	},
 ];

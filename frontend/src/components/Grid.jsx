@@ -9,11 +9,11 @@ export default function Grid({ paragraphs, images }) {
 			<div className="custom-grid-1">
 				{paragraphs?.map((paragraph, idx) => (
 					<>
-						<p key={idx} className={`paragraph paragraph${idx}`}>
+						<p key={`paragraph${idx}`} className={`paragraph paragraph${idx}`}>
 							{paragraph}
 						</p>
 						<img
-							key={`${images[idx]}`}
+							key={`image${idx}`}
 							className={`image image${idx}`}
 							src={images[idx]?.url}
 							alt=""

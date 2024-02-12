@@ -4,11 +4,10 @@ import { Col, Row, Container, ListGroup, Button } from "react-bootstrap";
 const Question = ({ user, questions }) => {
 	const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
 	const [userAnswers, setUserAnswers] = useState([]);
-	console.log(questions?.quiz[0], "questions from Question Component");
+	console.log(questions, "questions coming from Quiz");
 	const { question, answers, correctAnswer } =
-		questions?.quiz[currentQuestionIdx] ?? {};
-	const checkRef = useRef();
-	console.log(checkRef);
+		questions[currentQuestionIdx] ?? {};
+	// console.log(checkRef);
 	console.log(question, answers, "quiz inside Question Component");
 
 	function handleClick(selectedAnswerIdx) {
@@ -58,6 +57,7 @@ const Question = ({ user, questions }) => {
 									currentQuestionIdx,
 									answerIdx
 								)} p-3`}
+								key={answerIdx}
 							>
 								{answer}
 							</ListGroup.Item>
@@ -65,7 +65,7 @@ const Question = ({ user, questions }) => {
 					</ListGroup>
 				</Col>
 				<ListGroup.Item className="mt-3 d-flex flex-row-reverse">
-					{currentQuestionIdx === questions?.quiz.length - 1 &&
+					{currentQuestionIdx === questions?.length - 1 &&
 					userAnswers[currentQuestionIdx] != null ? (
 						<Button variant="primary">Submit Answers</Button>
 					) : userAnswers[currentQuestionIdx] == null ? (
@@ -84,3 +84,10 @@ const Question = ({ user, questions }) => {
 };
 
 export default Question;
+
+//to do
+
+//seed data base with quiz info
+// update frontend menuItems with quiz link?
+//user authentication back and frontend before finish quiz
+//finish routing and update redux slices for quiz

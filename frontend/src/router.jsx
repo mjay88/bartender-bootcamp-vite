@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
 		errorElement: <h1>Error, unfortunately that path leads to no where...</h1>,
 		children: [
 			{ path: "sections/:sectionId", element: <Content /> },
-			{ path: "/quiz", element: <Quiz /> },
+			{ path: "sections/quiz/:sectionKey", element: <Quiz /> },
 		],
 	},
 ]);
