@@ -33,7 +33,7 @@ const getQuizByKey = asyncHandler(async (req, res) => {
 	// const quiz = tests.find(({ sectionKey }) => sectionKey === key);
 	const quiz = await Quiz.find({ sectionKey: req.params.sectionKey });
 	if (quiz) {
-		return res.json(quiz);
+		return res.json(quiz[0]);
 	} else {
 		res.status(404);
 		throw new Error("Quiz not found");
