@@ -345,6 +345,7 @@ body,
 	padding: 5px;
 	margin: 0;
 	border: 2px solid transparent; /*to prevent borders from moving content*/
+	background-color: transparent;
 }
 
 .answer::before {
@@ -363,7 +364,7 @@ body,
 .answer.incorrect::before {
 	background: black content-box;
 }
-
+// try adding transparent somewhere?
 .correct {
 	border: 3px solid green;
 }

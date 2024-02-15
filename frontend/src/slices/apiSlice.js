@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; //crea
 import { BASE_URL } from "../constants";
 
 const baseQuery = fetchBaseQuery({ baseUrl: BASE_URL });
-//parent of quizSlice, userSlice
+//parent of quizSlice, userSlice, sectionSlice
 export const apiSlice = createApi({
 	baseQuery,
 	tagTypes: ["QuizScore", "User", "Section"],
