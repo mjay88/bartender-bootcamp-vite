@@ -10,6 +10,7 @@ import {
 	getUserById,
 	deleteUser,
 	updateUser,
+	updateQuizScores,
 } from "../controllers/userController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
@@ -24,6 +25,7 @@ router
 	.get(protect, getUserProfile)
 	.put(protect, updateUserProfile);
 
+router.route("/quiz").put(protect, updateQuizScores);
 // router.route("/profile").get(getUserProfile).put(updateUserProfile);
 // router
 // 	.route("/:id")

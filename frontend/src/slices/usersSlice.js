@@ -62,6 +62,14 @@ export const usersSlice = apiSlice.injectEndpoints({
 			}),
 			invalidatesTags: ["Users"],
 		}),
+		updateQuizScores: builder.mutation({
+			query: (data) => ({
+				url: `${USERS_URL}/quiz`,
+				method: "PUT",
+				body: data,
+			}),
+			providesTags: ["QuizScores"],
+		}),
 	}),
 });
 
@@ -74,4 +82,5 @@ export const {
 	useDeleteUserMutation,
 	useGetUserDetailsQuery,
 	useUpdateUserMutation,
+	useUpdateQuizScoresMutation,
 } = usersSlice;

@@ -1,24 +1,56 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Col, Row, Container, ListGroup, Button } from "react-bootstrap";
+import { useUpdateQuizScoresMutation } from "../slices/usersSlice";
 import Loader from "./Loader";
 import Message from "./Message";
+import { setCredentials } from "../slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const Question = ({ user, questions, isLoading, error }) => {
+const Question = ({ questions, isLoading, error, sectionKey }) => {
+	//import an action to dispatch to the updateQuizScores from userSlice? also create global state for the user? upon login?
 	const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
-	const [userAnswers, setUserAnswers] = useState([]);
-	console.log(questions, "questions coming from Quiz");
+	const [userAnswers, setUserAnswers] = useState({ scores: [], correct: 0 });
+	console.log(userAnswers, "useranswers");
 	const { question, answers, correctAnswer } =
 		questions[currentQuestionIdx] ?? {};
-	// console.log(checkRef);
-	console.log(question, answers, "quiz inside Question Component");
-
+	const [updateScores] = useUpdateQuizScoresMutation();
+	const dispatch = useDispatch();
+	const { userInfo } = useSelector((state) => state.auth);
+	// console.log(userInfo, "user info inside question component");
+	// console.log(question, answers, "quiz inside Question Component");
+	function addToCorrect(selectedAnswerIdx, correctAnswer, userAnswers) {
+		let newCorrectCount;
+		if (selectedAnswerIdx === correctAnswer) {
+			newCorrectCount = userAnswers.correct + 1;
+		} else {
+			newCorrectCount = userAnswers.correct;
+		}
+		return newCorrectCount;
+	}
 	function handleClick(selectedAnswerIdx) {
-		setUserAnswers((prevAnswers) => [...prevAnswers, selectedAnswerIdx]);
+		setUserAnswers({
+			scores: [...userAnswers.scores, selectedAnswerIdx],
+			correct: addToCorrect(selectedAnswerIdx, correctAnswer, userAnswers),
+		});
 		//move this to next button?
 		// setCurrentQuestionIdx((prevIdx) => prevIdx + 1);
 	}
 	function handleNextClick() {
 		setCurrentQuestionIdx((prevIdx) => prevIdx + 1);
+	}
+
+	async function handleSubmitScores() {
+		try {
+			const res = await updateScores({
+				userId: userInfo._id,
+				sectionKey: sectionKey,
+				userAnswers: userAnswers,
+			}).unwrap();
+			//then re run setCredentials like in userRegisterScreen?
+			dispatch(setCredentials(res));
+		} catch (error) {
+			console.log(error);
+		}
 	}
 	function setStyles(
 		userAnswers,
@@ -27,9 +59,9 @@ const Question = ({ user, questions, isLoading, error }) => {
 		answerIdx
 	) {
 		let style = "";
-		if (userAnswers[currentQuestionIdx] == null) return style;
-		if (userAnswers[currentQuestionIdx] === answerIdx) {
-			if (userAnswers[currentQuestionIdx] === correctAnswer) {
+		if (userAnswers?.scores[currentQuestionIdx] == null) return style;
+		if (userAnswers?.scores[currentQuestionIdx] === answerIdx) {
+			if (userAnswers?.scores[currentQuestionIdx] === correctAnswer) {
 				style = " correct";
 			} else {
 				style = " incorrect";
@@ -76,9 +108,11 @@ const Question = ({ user, questions, isLoading, error }) => {
 						</Col>
 						<ListGroup.Item className="mt-3 d-flex flex-row-reverse">
 							{currentQuestionIdx === questions?.length - 1 &&
-							userAnswers[currentQuestionIdx] != null ? (
-								<Button variant="primary">Submit Answers</Button>
-							) : userAnswers[currentQuestionIdx] == null ? (
+							userAnswers.scores[currentQuestionIdx] != null ? (
+								<Button onClick={handleSubmitScores} variant="primary">
+									Submit Answers
+								</Button>
+							) : userAnswers.scores[currentQuestionIdx] == null ? (
 								<Button disabled={true} variant="primary">
 									Next
 								</Button>

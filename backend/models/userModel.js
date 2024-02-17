@@ -3,16 +3,12 @@ import bcrypt from "bcryptjs";
 
 const quizScoresSchema = new mongoose.Schema({
 	//change to sectionKey: String when you re seed
-	section: String,
-	url: String,
-	correct: [Number], //get from quiz using sectionKey?
-	//change to userScores ???
-	incorrect: [Number],
-	// attempted: Number, ???
-	// highestScore: Number, ??
+	sectionKey: String,
+
+	bestScore: Number, //calculate this in the controller. If client score is better than score retrieved from database (get user by id -> get section scores via sectionKey)
+
 	//////////////////////////// need to re seed at some point !!!!!!!!!1
-	scores: [Number], //averge based on quiz length, how to retieve quiz length?
-	//before we post quiz data to database we will need to calculate the score in the quizScore controller or user controller
+	scores: [Array], //averge based on quiz length, how to retieve quiz length?
 });
 
 const userSchema = new mongoose.Schema({
@@ -39,7 +35,7 @@ const userSchema = new mongoose.Schema({
 	},
 
 	quizScores: {
-		type: [quizScoresSchema],
+		type: [Object],
 	},
 });
 

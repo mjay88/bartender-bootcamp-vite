@@ -40,4 +40,10 @@ const getQuizByKey = asyncHandler(async (req, res) => {
 	}
 });
 
+// const updateQuizScores = asyncHandler(async (req, res) => {
+// 	//user data should already be on the response?
+// 	console.log(req, "request inside post quiz scores");
+// 	res.send("posting quiz scores");
+// });
+
 export { getSections, getSectionByUrl, getQuizByKey };

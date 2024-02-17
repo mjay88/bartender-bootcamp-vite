@@ -1,6 +1,5 @@
 import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/userModel.js";
-import { QuizScores } from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
 
 //authentication = login -> create jwt web token -> store it in an http only cookie -> send that cookie with every request after that and validate it with middleware (authMiddleWare)
@@ -124,6 +123,87 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 	}
 });
 
+//@desc update user profile
+//@route  PUT/POST? users/quiz
+//@access Private
+const updateQuizScores = asyncHandler(async (req, res) => {
+	//this should be recieving and object like this
+	//   {userId, sectionKey, userAnswers}
+	// use userId to get user from db
+	//update users quizScores
+	//save user to db
+	// { scores: [1 ,3 ,4, 6,], correct: 0 }
+
+	// console.log(req, "req ins controller");
+	try {
+		const { sectionKey, userAnswers } = req.body;
+		console.log(userAnswers.correct, "userAnswers.correct in controller");
+		const user = await User.findById(req.user._id);
+
+		// Find the index of the quiz score to replace
+		const scoreIndex = user.quizScores.findIndex(
+			(score) => score.sectionKey === sectionKey
+		);
+		console.log(
+			user.quizScores[scoreIndex],
+			"should be what exists in db currently"
+		);
+		if (scoreIndex !== -1) {
+			const newBestScore = determineBestScore(
+				userAnswers.correct,
+				user.quizScores[scoreIndex].bestScore
+			);
+
+			const updatedScores = [
+				user.quizScores[scoreIndex].scores,
+				userAnswers.scores,
+			];
+			console.log(updatedScores, "should be two arrays");
+			// Update the existing quiz score
+			// user.quizScores[scoreIndex].bestScore = newBestScore;
+			// user.quizScores[scoreIndex].scores = updatedScores;
+			user.quizScores[scoreIndex] = {
+				sectionKey: sectionKey,
+				bestScore: newBestScore,
+				scores: [...user.quizScores[scoreIndex].scores, userAnswers.scores],
+			};
+		} else {
+			// Create and push new quiz score if not found
+			const newQuizScore = {
+				sectionKey: sectionKey,
+				bestScore: userAnswers.correct, // No need to compare, as this is the first score
+				scores: userAnswers.scores,
+			};
+			user.quizScores.push(newQuizScore);
+		}
+
+		function determineBestScore(clientScore, foundIndexScore) {
+			let newScore;
+			if (!foundIndexScore) return clientScore;
+			if (!foundIndexScore || clientScore > foundIndexScore) {
+				newScore = clientScore;
+			} else {
+				newScore = foundIndexScore;
+			}
+			return newScore;
+		}
+
+		// user.quizScores = [...user.quizScores, newQuizScores];
+		const updatedUser = await user.save();
+		res.status(200).json({
+			_id: updatedUser._id,
+			name: updatedUser.name,
+			email: updatedUser.email,
+			quizScores: updatedUser.quizScores,
+		});
+	} catch (error) {
+		console.error(error); // Log the error for server-side debugging
+		res.status(500).json({ message: "There was an error saving quiz scores." });
+	}
+
+	//send scores here from Question component, find the user in database, update the quiz scores with userAnswers
+	//Question component -> passes data to state via dispatch/setCredentials in authSlice ->
+});
 //@desc get all users
 //@route  GET /api/users
 //@access Private/Admin
@@ -199,6 +279,7 @@ export {
 	logoutUser,
 	getUserProfile,
 	updateUserProfile,
+	updateQuizScores,
 	getUsers,
 	getUserById,
 	deleteUser,
