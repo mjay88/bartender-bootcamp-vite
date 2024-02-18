@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 dotenv.config();
 // import { menuItems } from "./data/menuItems.js";
-import { quizzes } from "./data/quizzes.js";
+// import { quizzes } from "./data/quizzes.js";
 import connectDB from "./config/db.js";
 // import recursiveSearch from "./utils/recursiveSearch.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";

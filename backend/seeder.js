@@ -12,22 +12,7 @@ import cloudinary from "../Cloudinary/index.js";
 // import { v2 as cloudinary } from "cloudinary";
 
 import recursiveFlatten from "./utils/recursiveFlatten.js";
-// dotenv.config({ path: "../.env" }); //might cause issues when we configure variables when we deploy
 dotenv.config();
-
-// console.log(
-// 	cloudinary.api
-// 		.resources(
-// 			{
-// 				type: "upload",
-// 				prefix: "bartenderBootCamp/vodka", // add your folder
-// 			},
-// 			function (error, result) {
-// 				// console.log("images=", result, error);
-// 			}
-// 		)
-// 		.then((result) => console.log(result, "result.resources"))
-// );
 
 connectDB();
 
@@ -77,7 +62,6 @@ const importData = async () => {
 			cloudinaryImagesResponse
 		);
 
-		console.log(sectionsWithCloudinaryImages[0], "sections with images");
 		await Section.insertMany(sectionsWithCloudinaryImages);
 		console.log("Data Imported".green.inverse);
 		process.exit();
@@ -86,12 +70,13 @@ const importData = async () => {
 		process.exit(1);
 	}
 };
-importData();
+// importData();
 
 const destroyData = async () => {
 	try {
 		await Section.deleteMany();
 		await User.deleteMany();
+		await Quiz.deleteMany();
 
 		console.log("Data Destroyed!".red.inverse);
 		process.exit();
@@ -101,8 +86,9 @@ const destroyData = async () => {
 	}
 };
 
-// if (process.argv[2] === "-d") {
-// 	destroyData();
-// } else {
-// 	importData();
-// }
+if (process.argv[2] === "-d") {
+	destroyData();
+} else {
+	importData();
+}
+// console.log(process.argv);

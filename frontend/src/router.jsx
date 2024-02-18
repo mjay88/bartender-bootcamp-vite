@@ -3,6 +3,7 @@ import App from "./App";
 import Content from "./components/Content";
 import Quiz from "./components/Quiz";
 import LoginScreen from "./screens/LoginScreen";
+import RegistrationScreen from "./screens/RegistrationScreen";
 
 export const router = createBrowserRouter([
 	{
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
 			{ path: "sections/:sectionId", element: <Content /> },
 			{ path: "sections/quiz/:sectionKey", element: <Quiz /> },
 			{ path: "/login", element: <LoginScreen /> },
+			{ path: "/register", element: <RegistrationScreen /> },
 		],
 	},
 ]);

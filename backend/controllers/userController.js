@@ -138,6 +138,7 @@ const updateQuizScores = asyncHandler(async (req, res) => {
 	try {
 		const { sectionKey, userAnswers } = req.body;
 		console.log(userAnswers.correct, "userAnswers.correct in controller");
+		//user is made available via protect in authMiddleware.js
 		const user = await User.findById(req.user._id);
 
 		// Find the index of the quiz score to replace
@@ -154,11 +155,11 @@ const updateQuizScores = asyncHandler(async (req, res) => {
 				user.quizScores[scoreIndex].bestScore
 			);
 
-			const updatedScores = [
-				user.quizScores[scoreIndex].scores,
-				userAnswers.scores,
-			];
-			console.log(updatedScores, "should be two arrays");
+			// const updatedScores = [
+			// 	user.quizScores[scoreIndex].scores,
+			// 	userAnswers.scores,
+			// ];
+			// console.log(updatedScores, "should be two arrays");
 			// Update the existing quiz score
 			// user.quizScores[scoreIndex].bestScore = newBestScore;
 			// user.quizScores[scoreIndex].scores = updatedScores;
@@ -172,7 +173,7 @@ const updateQuizScores = asyncHandler(async (req, res) => {
 			const newQuizScore = {
 				sectionKey: sectionKey,
 				bestScore: userAnswers.correct, // No need to compare, as this is the first score
-				scores: userAnswers.scores,
+				scores: [userAnswers.scores],
 			};
 			user.quizScores.push(newQuizScore);
 		}

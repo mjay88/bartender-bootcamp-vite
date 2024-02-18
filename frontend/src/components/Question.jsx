@@ -5,7 +5,7 @@ import Loader from "./Loader";
 import Message from "./Message";
 import { setCredentials } from "../slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+//need to disable handleClick once we have answered last question
 const Question = ({ questions, isLoading, error, sectionKey }) => {
 	//import an action to dispatch to the updateQuizScores from userSlice? also create global state for the user? upon login?
 	const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
@@ -28,12 +28,12 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 		return newCorrectCount;
 	}
 	function handleClick(selectedAnswerIdx) {
+		//if question already answered, return
+		if (userAnswers.scores[currentQuestionIdx]) return;
 		setUserAnswers({
 			scores: [...userAnswers.scores, selectedAnswerIdx],
 			correct: addToCorrect(selectedAnswerIdx, correctAnswer, userAnswers),
 		});
-		//move this to next button?
-		// setCurrentQuestionIdx((prevIdx) => prevIdx + 1);
 	}
 	function handleNextClick() {
 		setCurrentQuestionIdx((prevIdx) => prevIdx + 1);

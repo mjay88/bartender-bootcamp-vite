@@ -10,6 +10,7 @@ const authSlice = createSlice({
 	name: "auth",
 	initialState,
 	reducers: {
+		//login or register screen -> usersSlice login or register mutation sends client info to backend -> backend validates and saves user in db, sets jwt token -> then we send the response from post request to setCredentials via dispatch (dispatch is the bridge between actions and state) -> setCredentials puts authController responsse in state.
 		setCredentials: (state, action) => {
 			//once we hit our backend through the user apiSlice, we get our user info and send it here as the payload to the action
 			state.userInfo = action.payload;

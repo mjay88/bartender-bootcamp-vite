@@ -26,14 +26,6 @@ const userSchema = new mongoose.Schema({
 		required: true,
 	},
 
-	testScores: {
-		type: [Number],
-	},
-
-	completed: {
-		type: [String],
-	},
-
 	quizScores: {
 		type: [Object],
 	},

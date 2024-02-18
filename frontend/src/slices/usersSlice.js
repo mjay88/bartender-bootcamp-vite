@@ -1,7 +1,8 @@
 import { USERS_URL } from "../constants";
 import { apiSlice } from "./apiSlice";
-
+//this sends our state to the backend (injectEndpoints)
 export const usersSlice = apiSlice.injectEndpoints({
+	//send post request at users/auth to backend to set the cookie
 	endpoints: (builder) => ({
 		//builder.mutation because where making a post request
 		login: builder.mutation({
@@ -15,7 +16,7 @@ export const usersSlice = apiSlice.injectEndpoints({
 		//register
 		register: builder.mutation({
 			query: (data) => ({
-				url: `${USERS_URL}`,
+				url: `${USERS_URL}/register`,
 				method: "POST",
 				body: data,
 			}),

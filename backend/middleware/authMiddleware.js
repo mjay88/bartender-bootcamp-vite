@@ -6,7 +6,7 @@ import User from "../models/userModel.js";
 const protect = asyncHandler(async (req, res, next) => {
 	let token;
 
-	//read the jwt from the cookie
+	//read the jwt from the cookie, the cookie is encrypted info about the user, mainly it contains the userId. Since it's set on the client side, it it exists we run this middleware everytime we hit a backend route with the protect middleware (in userRoutes) to make the rest of our routes cleaner
 	token = req.cookies.jwt;
 
 	if (token) {
