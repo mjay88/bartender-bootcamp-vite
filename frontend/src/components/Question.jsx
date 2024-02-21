@@ -10,7 +10,7 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 	//import an action to dispatch to the updateQuizScores from userSlice? also create global state for the user? upon login?
 	const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
 	const [userAnswers, setUserAnswers] = useState({ scores: [], correct: 0 });
-	console.log(userAnswers, "useranswers");
+	// console.log(userAnswers, "useranswers");
 	const { question, answers, correctAnswer } =
 		questions[currentQuestionIdx] ?? {};
 	const [updateScores] = useUpdateQuizScoresMutation();

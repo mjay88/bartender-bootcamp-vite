@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import SideNav from "./components/SideNav";
 import Layout from "./components/Layout";
 import Main from "./components/Main";
+import PreviousAndNextButtons from "./components/PreviousAndNextButtons";
 
 import "./assets/styles/custom.scss";
 import { menuItems } from "./menuItems";
@@ -20,6 +21,7 @@ const App = () => {
 				<SideNav menuItems={menuItems} />
 				<Main>
 					<Outlet />
+					<PreviousAndNextButtons menuItems={menuItems} />
 				</Main>
 			</Layout>
 			<Footer />

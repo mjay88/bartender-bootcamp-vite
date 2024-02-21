@@ -13,7 +13,7 @@ export default function Content() {
 		error,
 	} = useGetSectionByUrlQuery(sectionId);
 
-	console.log(content, "content");
+	// console.log(content, "content");
 
 	return (
 		<div>

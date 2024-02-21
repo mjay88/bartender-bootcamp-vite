@@ -1,7 +1,6 @@
 import { useGetQuizBySectionKeyQuery } from "../slices/sectionsApiSlice";
 import Question from "./Question";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const Quiz = () => {
 	// const [quiz, setQuiz] = useState({});
@@ -9,7 +8,9 @@ const Quiz = () => {
 	//in section controller, create route post route for submitting test scores.
 	//it will have to overwrite the existing test scores in the database
 	// console.log(user, "user in quiz component");
+	console.log(useParams(), "useParams Quiz.jsx");
 	const { sectionKey } = useParams();
+
 	const {
 		data: quiz,
 		isLoading,
