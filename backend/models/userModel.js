@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	//completed was not present last time I seeded
+	completed: {
+		type: [Object],
+	},
 
 	quizScores: {
 		type: [Object],
