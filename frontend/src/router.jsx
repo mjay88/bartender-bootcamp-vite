@@ -6,6 +6,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
+import LandingPage from "./components/LandingPage";
 export const router = createBrowserRouter([
 	{
 		path: "/",
@@ -22,8 +23,8 @@ export const router = createBrowserRouter([
 				],
 			},
 			{ path: "/login", element: <LoginScreen /> },
-
 			{ path: "/register", element: <RegistrationScreen /> },
 		],
 	},
+	{ path: "landing-page", element: <LandingPage /> },
 ]);

@@ -13,9 +13,14 @@ $dark: black;
 html,
 body,
 #root {
+	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 .main-wrapper {
@@ -370,4 +375,12 @@ body,
 }
 .incorrect {
 	border: 3px solid red;
+}
+
+.landing-page-image {
+	height: 100vh;
+	background-image: url("../images/smoked_cocktail.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: center;
 }
