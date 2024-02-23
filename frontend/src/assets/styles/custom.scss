@@ -384,3 +384,13 @@ body,
 	background-repeat: no-repeat;
 	background-position-y: center;
 }
+
+.landing-page-container {
+	margin: 0 !important;
+}
+
+.landing-navbar-brand {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
