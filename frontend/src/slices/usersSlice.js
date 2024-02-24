@@ -71,6 +71,17 @@ export const usersSlice = apiSlice.injectEndpoints({
 			}),
 			providesTags: ["QuizScores"],
 		}),
+		//updateCompletedSection
+		//query db
+		//update in users completed property
+		updateCompletedSection: builder.mutation({
+			query: (data) => ({
+				url: `${USERS_URL}`,
+				method: "PUT",
+				body: data,
+			}),
+			providesTags: ["Users"],
+		}),
 	}),
 });
 
@@ -84,4 +95,5 @@ export const {
 	useGetUserDetailsQuery,
 	useUpdateUserMutation,
 	useUpdateQuizScoresMutation,
+	useUpdateCompletedSectionMutation,
 } = usersSlice;

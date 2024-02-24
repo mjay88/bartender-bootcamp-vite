@@ -42,6 +42,9 @@ export const menuItems = [
 					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
 					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
 					"Unlike many spirits, vodka is not aged and is immediately bottled after dilution to the desired proof with water.",
+					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
+					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
+					"Unlike many spirits, vodka is not aged and is immediately bottled after dilution to the desired proof with water.",
 				],
 			},
 			{
@@ -57,6 +60,9 @@ export const menuItems = [
 					"/images/vodka/xtra-inc-FvlImDyiTaQ-unsplash.jpg",
 				],
 				content: [
+					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
+					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
+					"Unlike many spirits, vodka is not aged and is immediately bottled after dilution to the desired proof with water.",
 					"Traditionally, vodka was made from local grains (rye, wheat) or potatoes. Modern vodkas sometimes use fruits or sugar.",
 					"Vodka is distilled using a column still, allowing for high alcohol purity. This process may be repeated to achieve desired smoothness and purity.",
 					"Unlike many spirits, vodka is not aged and is immediately bottled after dilution to the desired proof with water.",

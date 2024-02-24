@@ -1,14 +1,25 @@
-//overwrite theme variables
+// Override default variables before the import
+$off-black: rgba(0, 0, 0, 0.886);
+
+$body-bg: $off-black;
 $dark: black;
+$bs-primary: red;
 
-//import bootstrap styles at the bottom
-@import "~bootstrap/scss/bootstrap.scss";
+//import bootstrap styles at the bottom only import what you need
+
+// @import "~bootstrap/scss/bootstrap.scss";
 // @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "react-bootstrap-sidebar-menu/dist/sidebar-menu.scss";
+// @import "react-bootstrap-sidebar-menu/dist/sidebar-menu.scss";
 
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../../node_modules/bootstrap/scss/functions";
+//find variable names here
+// @import "../../../node_modules/bootstrap/scss/variables";
+// @import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
 @import "~react-bootstrap-sidebar-menu/dist/sidebar-menu";
 @import "./sidebar-menu";
+// @import "../../../node_modules/bootstrap/scss/transitions";
 
 html,
 body,
@@ -393,4 +404,11 @@ body,
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+
+.completed-checkbox,
+.completed-checkbox:checked {
+	background-color: lighten($off-black, 50%);
+	border-color: lighten($off-black, 50%);
+	color: lighten($off-black, 50%);
 }

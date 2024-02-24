@@ -19,6 +19,7 @@ const authUser = asyncHandler(async (req, res) => {
 			_id: user._id,
 			name: user.name,
 			email: user.email,
+			completed: user.completed,
 			quizScores: user.quizScores,
 		});
 	} else {
@@ -44,6 +45,8 @@ const registerUser = asyncHandler(async (req, res) => {
 		name,
 		email,
 		password,
+		completed,
+		quizScores,
 	});
 
 	if (user) {
@@ -53,7 +56,9 @@ const registerUser = asyncHandler(async (req, res) => {
 			_id: user._id,
 			name: user.name,
 			email: user.email,
-			quizScores: [],
+			completed: user.completed,
+
+			quizScores: user.quizScores,
 		});
 	} else {
 		res.status(400);
@@ -86,6 +91,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
 			_id: user._id,
 			name: user.name,
 			email: user.email,
+			completed: user.completed,
 			quizScores: user.quizScores,
 		});
 	} else {
@@ -115,6 +121,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 			_id: updatedUser._id,
 			name: updatedUser.name,
 			email: updatedUser.email,
+			completed: user.completed,
 			quizScores: updatedUser.quizScores,
 		});
 	} else {
@@ -145,24 +152,16 @@ const updateQuizScores = asyncHandler(async (req, res) => {
 		const scoreIndex = user.quizScores.findIndex(
 			(score) => score.sectionKey === sectionKey
 		);
-		console.log(
-			user.quizScores[scoreIndex],
-			"should be what exists in db currently"
-		);
+		// console.log(
+		// 	user.quizScores[scoreIndex],
+		// 	"should be what exists in db currently"
+		// );
 		if (scoreIndex !== -1) {
 			const newBestScore = determineBestScore(
 				userAnswers.correct,
 				user.quizScores[scoreIndex].bestScore
 			);
 
-			// const updatedScores = [
-			// 	user.quizScores[scoreIndex].scores,
-			// 	userAnswers.scores,
-			// ];
-			// console.log(updatedScores, "should be two arrays");
-			// Update the existing quiz score
-			// user.quizScores[scoreIndex].bestScore = newBestScore;
-			// user.quizScores[scoreIndex].scores = updatedScores;
 			user.quizScores[scoreIndex] = {
 				sectionKey: sectionKey,
 				bestScore: newBestScore,
@@ -195,6 +194,7 @@ const updateQuizScores = asyncHandler(async (req, res) => {
 			_id: updatedUser._id,
 			name: updatedUser.name,
 			email: updatedUser.email,
+			completed: updatedUser.completed,
 			quizScores: updatedUser.quizScores,
 		});
 	} catch (error) {
@@ -205,8 +205,76 @@ const updateQuizScores = asyncHandler(async (req, res) => {
 	//send scores here from Question component, find the user in database, update the quiz scores with userAnswers
 	//Question component -> passes data to state via dispatch/setCredentials in authSlice ->
 });
+
+//@desc update user completed section
+//@route PUT /users
+//@access Private
+const updateCompletedSection = asyncHandler(async (req, res) => {
+	try {
+		//if where in section it will be sectionId, if where on a quiz it will be sectionKey
+		const { sectionKey, sectionId, checked } = req.body;
+		//get user from db (from protect route and user auth slice, if logged in we already have access to userinfo)
+		console.log(checked, "req.body.checked from controller");
+		const user = await User.findById(req.user._id);
+
+		//if sectionId, look for object with matching sectionId property
+		if (sectionId) {
+			const sectionIndex = user.completed.findIndex(
+				(section) => section.sectionId === sectionId
+			);
+			if (sectionIndex !== -1) {
+				const newSection = { sectionId: sectionId, completed: !checked };
+				// console.log(newSection, "if section is found");
+
+				user.completed[sectionIndex] = newSection;
+			} else {
+				const newSection = { sectionId: sectionId, completed: !checked };
+				// console.log(newSection, "if section is found");
+
+				user.completed = [...user.completed, newSection];
+			}
+			//else if sectionKey, look for object with matching sectionKey property
+		} else if (sectionKey) {
+			const sectionIndex = user.completed.findIndex(
+				(section) => section.sectionKey === `quiz/${sectionKey}`
+			);
+			console.log(sectionKey, "in controller");
+			if (sectionIndex !== -1) {
+				const newSection = {
+					sectionKey: `quiz/${sectionKey}`,
+					completed: !checked,
+				};
+				console.log(newSection, "if section is found");
+				user.completed[sectionIndex] = newSection;
+			} else {
+				const newSection = {
+					sectionKey: `quiz/${sectionKey}`,
+					completed: !checked,
+				};
+				console.log(newSection, "if sectioin is not found");
+
+				user.completed.push(newSection);
+			}
+		}
+		// console.log(user, "about to update this user, look at completed property");
+		const updatedUser = await user.save();
+		res.status(200).json({
+			_id: updatedUser._id,
+			name: updatedUser.name,
+			email: updatedUser.email,
+			completed: updatedUser.completed,
+			quizScores: updatedUser.quizScores,
+		});
+	} catch (error) {
+		console.error(error); // Log the error for server-side debugging
+		res.status(500).json({
+			message: "There was an error saving completed section to database.",
+		});
+	}
+});
+
 //@desc get all users
-//@route  GET /api/users
+//@route  GET /users
 //@access Private/Admin
 
 const getUsers = asyncHandler(async (req, res) => {
@@ -215,7 +283,7 @@ const getUsers = asyncHandler(async (req, res) => {
 });
 
 //@desc get user by id
-//@route  GET /api/users/:id
+//@route  GET /users/:id
 //@access Private/Admin
 
 const getUserById = asyncHandler(async (req, res) => {
@@ -285,4 +353,5 @@ export {
 	getUserById,
 	deleteUser,
 	updateUser,
+	updateCompletedSection,
 };

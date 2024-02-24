@@ -1,6 +1,7 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 import { useParams } from "react-router-dom";
 import { getPreviousAndNext } from "../utils/getPreviousAndNext";
 import { useState, useEffect } from "react";
@@ -23,35 +24,33 @@ const PreviousAndNextButtons = ({ menuItems }) => {
 		}
 	}, [sectionId, menuItems, sectionKey]);
 
-	console.log(sectionId, "sectionId from PreviousAndNextButton.jsx");
-
 	return (
 		<>
 			{sectionId && (
 				<Pagination>
 					{previous ? (
-						<Pagination.Prev>
-							<Link to={`sections/${previous.url}`}>{previous.title}</Link>
-						</Pagination.Prev>
+						<LinkContainer to={`sections/${previous.url}`}>
+							<Pagination.Prev>{previous.title}</Pagination.Prev>
+						</LinkContainer>
 					) : null}
 					{next ? (
-						<Pagination.Prev>
-							<Link to={`sections/${next.url}`}>{next.title}</Link>
-						</Pagination.Prev>
+						<LinkContainer to={`sections/${next.url}`}>
+							<Pagination.Prev>{next.title}</Pagination.Prev>
+						</LinkContainer>
 					) : null}
 				</Pagination>
 			)}
 			{sectionKey && (
 				<Pagination>
 					{previous ? (
-						<Pagination.Prev>
-							<Link to={`sections/${previous.url}`}>{previous.title}</Link>
-						</Pagination.Prev>
+						<LinkContainer to={`sections/${previous.url}`}>
+							<Pagination.Prev>{previous.title}</Pagination.Prev>
+						</LinkContainer>
 					) : null}
 					{next ? (
-						<Pagination.Prev>
-							<Link to={`sections/${next.url}`}>{next.title}</Link>
-						</Pagination.Prev>
+						<LinkContainer to={`sections/${next.url}`}>
+							<Pagination.Prev>{next.title}</Pagination.Prev>
+						</LinkContainer>
 					) : null}
 				</Pagination>
 			)}

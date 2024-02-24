@@ -11,12 +11,17 @@ import {
 	deleteUser,
 	updateUser,
 	updateQuizScores,
+	updateCompletedSection,
 } from "../controllers/userController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
 //route logic lives in userController.js
 // router.route("/").post(registerUser).get(protect, admin, getUsers);
-router.route("/").post(registerUser).get(protect, getUsers); // <- do I need this one? for future admin
+router
+	.route("/")
+	.post(registerUser)
+	.get(protect, getUsers)
+	.put(protect, updateCompletedSection);
 router.route("/register").post(registerUser);
 
 router.post("/logout", logoutUser);

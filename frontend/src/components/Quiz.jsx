@@ -1,4 +1,5 @@
 import { useGetQuizBySectionKeyQuery } from "../slices/sectionsApiSlice";
+import CompletedCheckbox from "./CompletedCheckbox";
 import Question from "./Question";
 import { useParams } from "react-router-dom";
 
@@ -8,9 +9,9 @@ const Quiz = () => {
 	//in section controller, create route post route for submitting test scores.
 	//it will have to overwrite the existing test scores in the database
 	// console.log(user, "user in quiz component");
-	console.log(useParams(), "useParams Quiz.jsx");
+	// console.log(useParams(), "useParams Quiz.jsx");
 	const { sectionKey } = useParams();
-
+	console.log(sectionKey, "sectionKey in Quiz");
 	const {
 		data: quiz,
 		isLoading,
@@ -28,6 +29,7 @@ const Quiz = () => {
 				error={error}
 				sectionKey={sectionKey}
 			/>
+			<CompletedCheckbox sectionIdentifier={sectionKey} />
 		</div>
 	);
 };
