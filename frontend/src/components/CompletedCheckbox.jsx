@@ -12,29 +12,16 @@ const CompletedCheckbox = ({ sectionIdentifier }) => {
 
 	const { userInfo } = useSelector((state) => state.auth);
 	const [updateCompleted] = useUpdateCompletedSectionMutation();
-	console.log(userInfo, "userinfo mofo");
-	//why is it sometimes userInfo.data.completed and sometimes userInfo.completed?
+	//why is it sometimes userInfo.data.completed and sometimes userInfo.completed? unwrap()!!!!!
 	useEffect(() => {
-		let alreadyCompletedSection;
-		if (userInfo.data) {
-			alreadyCompletedSection = userInfo?.data?.completed?.find((section) => {
-				if (sectionId && sectionId === section.sectionId) {
-					return section;
-				} else if (sectionKey && `quiz/${sectionKey}` === section.sectionKey) {
-					console.log(sectionKey, section, "sectionKey and section");
-					return section;
-				}
-			});
-		} else {
-			alreadyCompletedSection = userInfo?.completed?.find((section) => {
-				if (sectionId && sectionId === section.sectionId) {
-					return section;
-				} else if (sectionKey && `quiz/${sectionKey}` === section.sectionKey) {
-					console.log(sectionKey, section, "sectionKey and section");
-					return section;
-				}
-			});
-		}
+		const alreadyCompletedSection = userInfo?.completed?.find((section) => {
+			if (sectionId && sectionId === section.sectionId) {
+				return section;
+			} else if (sectionKey && `quiz/${sectionKey}` === section.sectionKey) {
+				console.log(sectionKey, section, "sectionKey and section");
+				return section;
+			}
+		});
 
 		console.log(alreadyCompletedSection, "alreadyCompletedSectoin");
 		if (alreadyCompletedSection && alreadyCompletedSection.completed) {
@@ -51,7 +38,7 @@ const CompletedCheckbox = ({ sectionIdentifier }) => {
 				sectionId,
 				sectionKey,
 				checked,
-			});
+			}).unwrap(); //unwarp gets rid of the nesting user information inside date prop in userInfo
 			dispatch(setCredentials({ ...res }));
 		} catch (error) {
 			console.log(error, "there was a big fat error");

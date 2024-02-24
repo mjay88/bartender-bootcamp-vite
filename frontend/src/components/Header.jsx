@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../slices/authSlice";
 import { useLogoutMutation } from "../slices/usersSlice";
@@ -40,10 +41,17 @@ const Header = () => {
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto">
 							{userInfo ? (
-								<NavDropdown title={userInfo.name} id="username">
-									<Nav.Link to="profile">
+								<NavDropdown
+									className="dropdown-menu-dark"
+									title={userInfo.name}
+									id="username"
+								>
+									<LinkContainer to={`/edit-profile`}>
+										<NavDropdown.Item>Edit Profile</NavDropdown.Item>
+									</LinkContainer>
+									<LinkContainer to={`/profile`}>
 										<NavDropdown.Item>Profile</NavDropdown.Item>
-									</Nav.Link>
+									</LinkContainer>
 									<NavDropdown.Item onClick={logoutHandler}>
 										Logout
 									</NavDropdown.Item>

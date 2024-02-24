@@ -1,20 +1,30 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Col, Row, Container, ListGroup, Button } from "react-bootstrap";
+import { Col, Row, Container, ListGroup, Button, Modal } from "react-bootstrap";
 import { useUpdateQuizScoresMutation } from "../slices/usersSlice";
 import Loader from "./Loader";
 import Message from "./Message";
 import { setCredentials } from "../slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { getPreviousAndNext } from "../utils/getPreviousAndNext";
+import { useNavigate } from "react-router-dom";
+import { menuItems } from "../menuItems";
 //need to disable handleClick once we have answered last question
 const Question = ({ questions, isLoading, error, sectionKey }) => {
 	//import an action to dispatch to the updateQuizScores from userSlice? also create global state for the user? upon login?
 	const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
+	const [show, setShow] = useState(false);
 	const [userAnswers, setUserAnswers] = useState({ scores: [], correct: 0 });
 	const { question, answers, correctAnswer } =
 		questions[currentQuestionIdx] ?? {};
 	const [updateScores] = useUpdateQuizScoresMutation();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const { userInfo } = useSelector((state) => state.auth);
+	const currentQuizRecord = userInfo.quizScores.find(
+		(quiz) => quiz.sectionKey === sectionKey
+	);
+	const currentBestScore =
+		(currentQuizRecord.bestScore / currentQuizRecord.scores[0].length) * 100;
 
 	function addToCorrect(selectedAnswerIdx, correctAnswer, userAnswers) {
 		let newCorrectCount;
@@ -37,6 +47,9 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 		setCurrentQuestionIdx((prevIdx) => prevIdx + 1);
 	}
 
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 	async function handleSubmitScores() {
 		try {
 			const res = await updateScores({
@@ -49,7 +62,14 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 		} catch (error) {
 			console.log(error);
 		}
+		setShow(true);
+		//navigate to next section
+		navigate(getPreviousAndNext(menuItems, `quiz/${sectionKey}`)[1].url);
 	}
+	console.log(
+		getPreviousAndNext(menuItems, `quiz/${sectionKey}`)[1].url,
+		"navigating to here"
+	);
 	function setStyles(
 		userAnswers,
 		correctAnswer,
@@ -70,6 +90,29 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 
 	return (
 		<>
+			<Modal
+				show={show}
+				onHide={() => setShow(false)}
+				dialogClassName="custom-modal"
+				aria-labelledby="example-custom-modal-styling-title"
+			>
+				<Modal.Header closeButton>
+					<Modal.Title id="example-custom-modal-styling-title">
+						Quiz scores submitted succesfully!
+					</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<div>
+						<h3>
+							Current Score:{" "}
+							{Math.round((userAnswers.correct / questions?.length) * 100)}%
+						</h3>
+					</div>
+					<div>
+						<h3>Best Score: {currentBestScore ? currentBestScore : 0}%</h3>
+					</div>
+				</Modal.Body>
+			</Modal>
 			{isLoading ? (
 				<Loader />
 			) : error ? (

@@ -7,7 +7,7 @@ import { useProfileMutation } from "../slices/usersSlice";
 import { setCredentials } from "../slices/authSlice";
 import FormContainer from "../components/FormContainer";
 
-const ProfileScreen = () => {
+const EditProfileScreen = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -94,4 +94,4 @@ const ProfileScreen = () => {
 	);
 };
 
-export default ProfileScreen;
+export default EditProfileScreen;

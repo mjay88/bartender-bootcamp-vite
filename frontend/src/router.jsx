@@ -4,7 +4,8 @@ import Content from "./components/Content";
 import Quiz from "./components/Quiz";
 import LoginScreen from "./screens/LoginScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
-import ProfileScreen from "./screens/ProfileScreen";
+import EditProfileScreen from "./screens/EditProfileScreen";
+import UserProfileScreen from "./screens/UserProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
 import LandingPage from "./components/LandingPage";
 export const router = createBrowserRouter([
@@ -19,7 +20,8 @@ export const router = createBrowserRouter([
 				children: [
 					{ path: "sections/:sectionId", element: <Content /> },
 					{ path: "sections/quiz/:sectionKey", element: <Quiz /> },
-					{ path: "/profile", element: <ProfileScreen /> },
+					{ path: "/edit-profile", element: <EditProfileScreen /> },
+					{ path: "/profile", element: <UserProfileScreen /> },
 				],
 			},
 			{ path: "/login", element: <LoginScreen /> },

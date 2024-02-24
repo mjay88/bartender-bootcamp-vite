@@ -1,7 +1,6 @@
 // Override default variables before the import
 $off-black: rgba(0, 0, 0, 0.886);
 
-$body-bg: $off-black;
 $dark: black;
 $bs-primary: red;
 
@@ -65,6 +64,7 @@ body,
 	grid-area: sidebar;
 	overflow-y: auto;
 }
+//grid-auto-rows is auto by default
 
 .custom-grid-1 {
 	display: grid;
@@ -73,7 +73,8 @@ body,
 	//2 columns
 	grid-template-columns: repeat(2, 1fr);
 	//height of one row
-	grid-auto-rows: repeat(auto auto);
+	grid-template-rows: repeat(1, 1fr);
+	// grid-auto-rows: repeat(auto, auto);
 	// grid-auto-rows: auto 1fr;
 	grid-template-areas:
 		"paragraph1 image1"
@@ -83,7 +84,15 @@ body,
 		"paragraph5 paragraph5"
 		"paragraph6 image3"
 		"image4 paragraph7"
-		"paragraph8 image5";
+		"paragraph8 image5"
+		"image6 paragraph9"
+		"paragraph10 paragraph10"
+		"paragraph11 paragraph11"
+		"image7 paragraph12"
+		"paragraph13 paragraph13"
+		"paragraph14 image8"
+		"image9 paragraph15"
+		"paragraph16 image10";
 
 	.paragraph {
 		font-size: 1.5rem;
@@ -115,6 +124,30 @@ body,
 	.paragraph:nth-of-type(8) {
 		grid-area: paragraph8;
 	}
+	.paragraph:nth-of-type(9) {
+		grid-area: paragraph9;
+	}
+	.paragraph:nth-of-type(10) {
+		grid-area: paragraph10;
+	}
+	.paragraph:nth-of-type(11) {
+		grid-area: paragraph11;
+	}
+	.paragraph:nth-of-type(12) {
+		grid-area: paragraph12;
+	}
+	.paragraph:nth-of-type(13) {
+		grid-area: paragraph13;
+	}
+	.paragraph:nth-of-type(14) {
+		grid-area: paragraph14;
+	}
+	.paragraph:nth-of-type(15) {
+		grid-area: paragraph15;
+	}
+	.paragraph:nth-of-type(16) {
+		grid-area: paragraph16;
+	}
 
 	.image {
 		width: 400px;
@@ -137,222 +170,20 @@ body,
 		grid-area: image5;
 	}
 
-	// .paragraph:nth-of-type(8n + 1) {
-	// 		grid-area: auto / paragraph1;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 2) {
-	// 		grid-area: auto / paragraph2;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 3) {
-	// 		grid-area: auto / paragraph3;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 4) {
-	// 		grid-area: auto / paragraph4;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 5) {
-	// 		grid-area: auto / paragraph5;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 6) {
-	// 		grid-area: auto / paragraph6;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 7) {
-	// 		grid-area: auto / paragraph7;
-	// 	}
-	// 	.paragraph:nth-of-type(8n + 8) {
-	// 		grid-area: auto / paragraph8;
-	// 	}
-
-	// 	.image:nth-of-type(5n + 1) {
-	// 		grid-area: auto / image1;
-	// 	}
-	// 	.image:nth-of-type(5n + 2) {
-	// 		grid-area: auto / image2;
-	// 	}
-	// 	.image:nth-of-type(5n + 3) {
-	// 		grid-area: auto / image3;
-	// 	}
-	// 	.image:nth-of-type(5n + 4) {
-	// 		grid-area: auto / image4;
-	// 	}
-	// 	.image:nth-of-type(5n + 5) {
-	// 		grid-area: auto / image5;
-	// 	}
-}
-.custom-grid-2 {
-	display: grid;
-	place-items: center;
-	grid-gap: 15px;
-	grid-auto-flow: dense;
-	//2 columns
-	grid-template-columns: repeat(2, 1fr);
-	//height of one row
-	grid-auto-rows: 150px;
-	// grid-auto-rows: auto 1fr;
-
-	.paragraph {
-		font-size: 1.5rem;
-		text-align: center;
+	.image:nth-of-type(6) {
+		grid-area: image6;
 	}
-	.image {
-		width: 400px;
-		height: auto;
+	.image:nth-of-type(7) {
+		grid-area: image7;
 	}
-	//first paragraph take up 1 row and 1 column
-	.paragraph:nth-of-type(8n + 1) {
-		grid-area: span 1 / span 1;
+	.image:nth-of-type(8) {
+		grid-area: image8;
 	}
-	//first image take up 1 column and 1 row
-	.image:nth-of-type(5n + 1) {
-		grid-area: span 1 / span 1;
+	.image:nth-of-type(9) {
+		grid-area: image9;
 	}
-	//second paragraph take up 1 row and 2 columns
-	.paragraph:nth-of-type(8n + 2) {
-		grid-area: span 1 / span 2;
-	}
-
-	//third paragraph take up 1 row and 2 columns
-	.paragraph:nth-of-type(8n + 3) {
-		grid-area: span 1 / span 2;
-	}
-
-	//2nd image take up 1 row `1 column
-	.image:nth-of-type(5n + 2) {
-		grid-area: span 1 / span 1;
-	}
-
-	//fourth paragraph take up 1 row and 1 columns
-	.paragraph:nth-child(8n + 4) {
-		grid-area: span 1 / span 1;
-	}
-
-	//fifth paragraph take up 1 row and 2 columns
-	.paragraph:nth-of-type(8n + 5) {
-		grid-area: span 1 / span 2;
-	}
-
-	//sixth paragraph take up 1 row and 1 columns
-	.paragraph:nth-of-type(8n + 6) {
-		grid-area: span 1 / span 1;
-	}
-
-	//third image take up 1 row 1 column
-	.image:nth-of-type(5n + 3) {
-		grid-area: span 1 / span 1;
-	}
-
-	//fourth image take up 1 row 1 column
-	.image:nth-of-type(5n + 4) {
-		grid-area: span 1 / span 1;
-	}
-
-	//seven paragraph take up 1 row and 1 columns
-	.paragraph:nth-of-type(8n + 7) {
-		grid-area: span 1 / span 1;
-	}
-
-	//eighth paragraph take up 1 row and 1 columns
-	.paragraph:nth-of-type(8n + 8) {
-		grid-area: span 1 / span 1;
-	}
-
-	//fifth image take up 1 row 1 column
-	.image:nth-of-type(5n + 5) {
-		grid-area: span 1 / span 1;
-	}
-}
-
-.custom-grid-3 {
-	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-template-rows: repeat(8, 1fr);
-	grid-gap: 15px;
-
-	// grid-template-areas:
-	// 	"paragraph1 image1"
-	// 	"paragraph2 paragraph2"
-	// 	"paragraph3 paragraph3"
-	// 	"image2 paragraph4"
-	// 	"paragraph5 paragraph5"
-	// 	"paragraph6 image3"
-	// 	"image4 paragraph7"
-	// 	"paragraph8 image5";
-	//1st p 1st child
-
-	.image {
-		width: 400px;
-		height: auto;
-	}
-
-	.paragraph {
-		font-size: 1.5rem;
-		text-align: center;
-	}
-	//1st p 1st child of grid, 1st of type p
-	.paragraph:nth-of-type(8n + 1) {
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
-	}
-	//1st image 2nd child of grid, 1st of type image
-	.image:nth-of-type(5n + 1) {
-		grid-column: 2 / 3;
-		grid-row: 1 / 2;
-	}
-	//2nd p 3rd child 2nd of type p
-	.paragraph:nth-of-type(8n + 2) {
-		grid-column: 1 / 3;
-		grid-row: 2 / 3;
-	}
-	//3nd p 5th child of grid, 3rd of type p
-	.paragraph:nth-of-type(8n + 3) {
-		grid-column: 1 / 3;
-		grid-row: 3 / 4;
-	}
-	//2nd image 4th child of grid, 2nd of type image
-	.image:nth-of-type(5n + 2) {
-		grid-column: 1 / 2;
-		grid-row: 4 / 5;
-	}
-	//4th p 6th child of grid 4th of type p
-	.paragraph:nth-of-type(8n + 4) {
-		grid-column: 2 / 3;
-		grid-row: 4 / 5;
-	}
-	//5th p 7th child of grid, 5th of type p
-	.paragraph:nth-of-type(8n + 5) {
-		grid-column: 1 / 3;
-		grid-row: 5 / 6;
-	}
-
-	//6th p 8th child, 6th of type p
-	.paragraph:nth-of-type(8n + 6) {
-		grid-column: 1 / 2;
-		grid-row: 6 / 7;
-	}
-	//3rd image 9th child, 3rd of type image
-	.image:nth-of-type(5n + 3) {
-		grid-column: 2 / 3;
-		grid-row: 6 / 7;
-	}
-	//4rd image 10th child 4th of type image
-	.image:nth-of-type(5n + 4) {
-		grid-column: 1 / 2;
-		grid-row: 7 / 8;
-	}
-	//7th p 11th child, 7th of type p
-	.paragraph:nth-of-type(8n + 7) {
-		grid-column: 2 / 3;
-		grid-row: 7 / 8;
-	}
-	//8th p 12th child of grid, 8th of type p
-	.paragraph:nth-of-type(8n + 8) {
-		grid-column: 1 / 2;
-		grid-row: 8 / 9;
-	}
-
-	//5th image 13th child
-	.image:nth-of-type(5n + 4) {
-		grid-column: 2 / 3;
-		grid-row: 8 / 9;
+	.image:nth-of-type(10) {
+		grid-area: image10;
 	}
 }
 
@@ -383,9 +214,11 @@ body,
 // try adding transparent somewhere?
 .correct {
 	border: 3px solid green;
+	border-top-width: 3px !important;
 }
 .incorrect {
 	border: 3px solid red;
+	border-top-width: 3px !important;
 }
 
 .landing-page-image {
@@ -411,4 +244,18 @@ body,
 	background-color: lighten($off-black, 50%);
 	border-color: lighten($off-black, 50%);
 	color: lighten($off-black, 50%);
+}
+
+.footer-logo {
+	-webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+	filter: invert(100%);
+	width: 100px;
+}
+
+.custom-nav-icon {
+	color: lighten($off-black, 50%);
+}
+
+.custom-modal {
+	min-height: 100vh;
 }
