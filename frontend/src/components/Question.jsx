@@ -47,7 +47,14 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 		setCurrentQuestionIdx((prevIdx) => prevIdx + 1);
 	}
 
-	const handleClose = () => setShow(false);
+	const handleClose = () => {
+		setShow(false);
+		//navigate to next section
+
+		navigate(
+			"/sections/" + getPreviousAndNext(menuItems, `quiz/${sectionKey}`)[1].url
+		);
+	};
 	const handleShow = () => setShow(true);
 
 	async function handleSubmitScores() {
@@ -63,13 +70,8 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 			console.log(error);
 		}
 		setShow(true);
-		//navigate to next section
-		navigate(getPreviousAndNext(menuItems, `quiz/${sectionKey}`)[1].url);
 	}
-	console.log(
-		getPreviousAndNext(menuItems, `quiz/${sectionKey}`)[1].url,
-		"navigating to here"
-	);
+
 	function setStyles(
 		userAnswers,
 		correctAnswer,
@@ -92,7 +94,7 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 		<>
 			<Modal
 				show={show}
-				onHide={() => setShow(false)}
+				onHide={() => handleClose()}
 				dialogClassName="custom-modal"
 				aria-labelledby="example-custom-modal-styling-title"
 			>
