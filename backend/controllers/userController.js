@@ -29,7 +29,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 //@desc Auth Register user
-//@route POST users/
+//@route POST /register
 //@access Public
 const registerUser = asyncHandler(async (req, res) => {
 	const { name, email, password } = req.body;
@@ -45,8 +45,6 @@ const registerUser = asyncHandler(async (req, res) => {
 		name,
 		email,
 		password,
-		completed,
-		quizScores,
 	});
 
 	if (user) {
@@ -57,7 +55,6 @@ const registerUser = asyncHandler(async (req, res) => {
 			name: user.name,
 			email: user.email,
 			completed: user.completed,
-
 			quizScores: user.quizScores,
 		});
 	} else {
