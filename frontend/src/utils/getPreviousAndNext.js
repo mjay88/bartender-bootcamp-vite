@@ -1,3 +1,4 @@
+//should utils be a custom hook?
 export const getPreviousAndNext = (menuItems, url) => {
 	//if (url === "") return;
 	let result;

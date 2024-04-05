@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../slices/authSlice";
@@ -29,13 +29,16 @@ const Header = () => {
 				className="flex-column"
 				bg="dark"
 				variant="dark"
-				expand="lg"
+				expand="md"
 				collapseOnSelect
 			>
 				<Container>
-					<Navbar.Brand href="/">
+					<Navbar.Brand
+						href="/"
+						className="custom-navbar-brand d-flex flex-wrap"
+					>
 						<img src={logo}></img>
-						Bartender Bootcamp
+						<div className="m-auto">Bartender Bootcamp</div>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">

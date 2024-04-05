@@ -8,24 +8,26 @@ import React from "react";
 const SideNav = ({ menuItems }) => {
 	return (
 		<Sidebar variant="dark" bg="dark" expand="sm">
-			<Sidebar.Collapse getScrollValue={500}>
-				<Sidebar.Header>
-					{/* <Container>
+			<Sidebar.Nav>
+				<Sidebar.Collapse getScrollValue={500}>
+					<Sidebar.Header>
+						{/* <Container>
 						<h4>Categories</h4>
 					</Container> */}
-					<Sidebar.Brand>Categories</Sidebar.Brand>
-					<Sidebar.Toggle />
-				</Sidebar.Header>
+						<Sidebar.Brand>Categories</Sidebar.Brand>
+						<Sidebar.Toggle />
+					</Sidebar.Header>
 
-				<Sidebar.Body>
-					<SidebarItems menuItems={menuItems} />
-				</Sidebar.Body>
-				<Sidebar.Footer className="position-relative">
+					<Sidebar.Body>
+						<SidebarItems menuItems={menuItems} />
+					</Sidebar.Body>
+				</Sidebar.Collapse>
+				<Sidebar.Footer className="sidebar-footer">
 					<Sidebar.Nav.Title className="text-light">
 						Footer Stuff
 					</Sidebar.Nav.Title>
 				</Sidebar.Footer>
-			</Sidebar.Collapse>
+			</Sidebar.Nav>
 		</Sidebar>
 	);
 };

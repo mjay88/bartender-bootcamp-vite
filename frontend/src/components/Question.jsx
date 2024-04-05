@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Col, Row, Container, ListGroup, Button, Modal } from "react-bootstrap";
 import { useUpdateQuizScoresMutation } from "../slices/usersSlice";
 import Loader from "./Loader";
@@ -20,11 +20,14 @@ const Question = ({ questions, isLoading, error, sectionKey }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const { userInfo } = useSelector((state) => state.auth);
+
 	const currentQuizRecord = userInfo.quizScores.find(
 		(quiz) => quiz.sectionKey === sectionKey
 	);
-	const currentBestScore =
-		(currentQuizRecord.bestScore / currentQuizRecord.scores[0].length) * 100;
+
+	const currentBestScore = currentQuizRecord
+		? (currentQuizRecord.bestScore / currentQuizRecord?.scores[0].length) * 100
+		: 0;
 
 	function addToCorrect(selectedAnswerIdx, correctAnswer, userAnswers) {
 		let newCorrectCount;

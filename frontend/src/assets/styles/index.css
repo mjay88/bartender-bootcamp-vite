@@ -71,3 +71,8 @@ table th {
 .sidebar-menu-collapse.collapse {
 	display: block;
 }
+
+.sidebar-footer {
+	position: absolute;
+	bottom: 5px;
+}

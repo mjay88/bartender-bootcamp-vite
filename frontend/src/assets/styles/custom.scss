@@ -6,19 +6,10 @@ $bs-primary: red;
 
 //import bootstrap styles at the bottom only import what you need
 
-// @import "~bootstrap/scss/bootstrap.scss";
-// @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-// @import "react-bootstrap-sidebar-menu/dist/sidebar-menu.scss";
-
-// @import "~bootstrap/scss/bootstrap";
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-// @import "../../../node_modules/bootstrap/scss/functions";
-//find variable names here
-// @import "../../../node_modules/bootstrap/scss/variables";
-// @import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+
 @import "~react-bootstrap-sidebar-menu/dist/sidebar-menu";
 @import "./sidebar-menu";
-// @import "../../../node_modules/bootstrap/scss/transitions";
 
 html,
 body,
