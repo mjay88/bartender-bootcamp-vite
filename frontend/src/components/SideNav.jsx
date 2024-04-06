@@ -1,6 +1,7 @@
 import { LinkContainer } from "react-router-bootstrap";
 import Sidebar from "react-bootstrap-sidebar-menu";
 import React, { useState, useRef, useEffect } from "react";
+import UserProfileDropDown from "./UserProfileDropDown";
 
 const SideNav = ({ menuItems }) => {
 	const [isToggled, setIsToggled] = useState(false);
@@ -15,7 +16,7 @@ const SideNav = ({ menuItems }) => {
 			onToggle={() => setIsToggled(!isToggled)}
 		>
 			<Sidebar.Nav>
-				<Sidebar.Collapse getScrollValue={500}>
+				<Sidebar.Collapse getScrollValue={300}>
 					<Sidebar.Header>
 						<Sidebar.Brand>Categories</Sidebar.Brand>
 						<Sidebar.Toggle />
@@ -25,9 +26,9 @@ const SideNav = ({ menuItems }) => {
 						{isToggled ? null : <SidebarItems menuItems={menuItems} />}
 					</Sidebar.Body>
 				</Sidebar.Collapse>
-				<Sidebar.Footer className="sidebar-footer">
+				<Sidebar.Footer className="sidebar-footer" variant="dark" bg="dark">
 					<Sidebar.Nav.Title className="text-light">
-						Footer Stuff
+						{isToggled ? null : <UserProfileDropDown />}
 					</Sidebar.Nav.Title>
 				</Sidebar.Footer>
 			</Sidebar.Nav>
