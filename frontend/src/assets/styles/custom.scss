@@ -259,3 +259,12 @@ body,
 .custom-modal {
 	min-height: 100vh;
 }
+
+.logo-and-image {
+	@media (max-width: 600px) {
+		display: flex;
+		flex-direction: column;
+		margin: auto auto;
+		margin-left: 5rem;
+	}
+}

@@ -1,11 +1,8 @@
 import { LinkContainer } from "react-router-bootstrap";
 import Sidebar from "react-bootstrap-sidebar-menu";
 import React, { useState, useRef, useEffect } from "react";
-import useWindowDimensions from "../customHooks/useWindowDimensions";
 
 const SideNav = ({ menuItems }) => {
-	const { height, width } = useWindowDimensions();
-	console.log(height, width, "window Dimensions");
 	const [isToggled, setIsToggled] = useState(false);
 
 	console.log(isToggled, "isToggled");

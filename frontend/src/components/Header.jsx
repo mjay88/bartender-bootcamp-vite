@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../slices/authSlice";
 import { useLogoutMutation } from "../slices/usersSlice";
 import logo from "../assets/images/Logo.png";
+import useWindowDimensions from "../customHooks/useWindowDimensions";
 
 const Header = () => {
 	const { userInfo } = useSelector((state) => state.auth);
@@ -13,6 +14,7 @@ const Header = () => {
 	const navigate = useNavigate();
 	//we can call this whatever we want
 	const [logoutApiCall] = useLogoutMutation();
+	const { width } = useWindowDimensions();
 
 	const logoutHandler = async () => {
 		try {
@@ -29,42 +31,44 @@ const Header = () => {
 				className="flex-column"
 				bg="dark"
 				variant="dark"
-				expand="md"
+				expand={true}
 				collapseOnSelect
 			>
-				<Container>
+				<Container className="d-flex flex-wrap">
 					<Navbar.Brand
 						href="/"
-						className="custom-navbar-brand d-flex flex-wrap"
+						className="custom-navbar-brand d-flex flex-wrap logo-and-image"
 					>
 						<img src={logo}></img>
 						<div className="m-auto">Bartender Bootcamp</div>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="ms-auto">
-							{userInfo ? (
-								<NavDropdown
-									className="dropdown-menu-dark"
-									title={userInfo.name}
-									id="username"
-								>
-									<LinkContainer to={`/edit-profile`}>
-										<NavDropdown.Item>Edit Profile</NavDropdown.Item>
-									</LinkContainer>
-									<LinkContainer to={`/profile`}>
-										<NavDropdown.Item>Profile</NavDropdown.Item>
-									</LinkContainer>
-									<NavDropdown.Item onClick={logoutHandler}>
-										Logout
-									</NavDropdown.Item>
-								</NavDropdown>
-							) : (
-								<Nav.Link href="/login">
-									<FaUser /> Sign In
-								</Nav.Link>
-							)}
-						</Nav>
+						{width <= 600 ? null : (
+							<Nav className="ms-auto">
+								{userInfo ? (
+									<NavDropdown
+										className="dropdown-menu-dark"
+										title={userInfo.name}
+										id="username"
+									>
+										<LinkContainer to={`/edit-profile`}>
+											<NavDropdown.Item>Edit Profile</NavDropdown.Item>
+										</LinkContainer>
+										<LinkContainer to={`/profile`}>
+											<NavDropdown.Item>Profile</NavDropdown.Item>
+										</LinkContainer>
+										<NavDropdown.Item onClick={logoutHandler}>
+											Logout
+										</NavDropdown.Item>
+									</NavDropdown>
+								) : (
+									<Nav.Link href="/login">
+										<FaUser /> Sign In
+									</Nav.Link>
+								)}
+							</Nav>
+						)}
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
