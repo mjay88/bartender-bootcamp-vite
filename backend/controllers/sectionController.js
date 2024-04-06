@@ -16,8 +16,9 @@ const getSections = asyncHandler(async (req, res) => {
 //@access Public
 const getSectionByUrl = asyncHandler(async (req, res) => {
 	// const section = recursiveSearch(menuItems, req.params.sectionId);
+	console.log(req, res);
 	const section = await Section.find({ url: req.params.sectionId });
-	// console.log(section, "section in secitonRoutes");
+	console.log(section, "section in secitonRoutes");
 	if (section) {
 		return res.json(section[0]);
 	} else {

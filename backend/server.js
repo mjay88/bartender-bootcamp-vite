@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 dotenv.config();
 // import { menuItems } from "./data/menuItems.js";
 // import { quizzes } from "./data/quizzes.js";
@@ -16,6 +17,8 @@ connectDB();
 const app = express();
 
 //Body parser middleware
+
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
