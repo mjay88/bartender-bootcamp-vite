@@ -1,25 +1,31 @@
-import { Accordion, Navbar, Col, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import Sidebar from "react-bootstrap-sidebar-menu";
-import SidebarMenuFooter from "react-bootstrap-sidebar-menu";
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import useWindowDimensions from "../customHooks/useWindowDimensions";
 
 const SideNav = ({ menuItems }) => {
+	const { height, width } = useWindowDimensions();
+	console.log(height, width, "window Dimensions");
+	const [isToggled, setIsToggled] = useState(false);
+
+	console.log(isToggled, "isToggled");
 	return (
-		<Sidebar variant="dark" bg="dark" expand="sm">
+		<Sidebar
+			variant="dark"
+			bg="dark"
+			expand={false}
+			isToggled={isToggled}
+			onToggle={() => setIsToggled(!isToggled)}
+		>
 			<Sidebar.Nav>
 				<Sidebar.Collapse getScrollValue={500}>
 					<Sidebar.Header>
-						{/* <Container>
-						<h4>Categories</h4>
-					</Container> */}
 						<Sidebar.Brand>Categories</Sidebar.Brand>
 						<Sidebar.Toggle />
 					</Sidebar.Header>
 
 					<Sidebar.Body>
-						<SidebarItems menuItems={menuItems} />
+						{isToggled ? null : <SidebarItems menuItems={menuItems} />}
 					</Sidebar.Body>
 				</Sidebar.Collapse>
 				<Sidebar.Footer className="sidebar-footer">

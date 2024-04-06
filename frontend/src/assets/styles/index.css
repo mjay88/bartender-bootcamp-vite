@@ -61,7 +61,7 @@ table th {
 
 .sidebar-menu {
 	position: relative;
-	top: -16px;
+	/* top: -16px; */
 }
 
 .sidebar-menu-collapse.show {
