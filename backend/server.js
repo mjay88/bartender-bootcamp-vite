@@ -18,8 +18,8 @@ const app = express();
 
 //Body parser middleware
 
-app.use(bodyParser.json());
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Cookie parser middleware. Allows to access cookies

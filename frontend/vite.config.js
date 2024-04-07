@@ -8,16 +8,17 @@ dns.setDefaultResultOrder("verbatim");
 
 export default defineConfig(() => {
 	return {
-		// base: {
-		// 	base: "/",
-		// },
-		// define: {
-		// 	"process.env": {},
-		// },
 		server: {
 			open: true,
-			host: "localhost",
+			// host: "127.0.0.1",
 			port: 3000,
+			proxy: {
+				"/api": {
+					target: "http://localhost:5000", // replace with your server's address
+					changeOrigin: true,
+					rewrite: (path) => path.replace(/^\/api/, ""),
+				},
+			},
 		},
 
 		build: {
@@ -27,11 +28,7 @@ export default defineConfig(() => {
 			},
 		},
 		plugins: [react()],
-		// resolve: {
-		// 	alias: {
-		// 		"@": path.resolve(__dirname, "src"),
-		// 	},
-		// },
+
 		resolve: {
 			alias: [
 				{

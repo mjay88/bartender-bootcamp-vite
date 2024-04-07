@@ -7,6 +7,7 @@ export const sectionsApiSlice = apiSlice.injectEndpoints({
 			query: () => ({
 				url: SECTIONS_URL,
 			}),
+
 			keepUnusedDataFor: 5,
 		}),
 		getSectionByUrl: builder.query({
