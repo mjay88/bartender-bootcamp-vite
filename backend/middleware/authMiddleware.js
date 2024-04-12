@@ -11,6 +11,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
 	if (token) {
 		try {
+			console.log(process.env.JWT_SECRET, "authMiddleware process.env");
 			const decoded = jwt.verify(token, process.env.JWT_SECRET);
 			req.user = await User.findById(decoded.userId).select("-password"); //add the user to the req so we will be able to access it on all routes but subtract the password
 			next();

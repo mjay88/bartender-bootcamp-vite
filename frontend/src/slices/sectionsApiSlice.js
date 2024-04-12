@@ -13,6 +13,8 @@ export const sectionsApiSlice = apiSlice.injectEndpoints({
 		getSectionByUrl: builder.query({
 			query: (sectionUrl) => ({
 				url: `${SECTIONS_URL}/${sectionUrl}`,
+				// responseHandler: "text",
+				// responseHandler: (response) => response.text(),
 			}),
 			keepUnusedDataFor: 5,
 		}),
