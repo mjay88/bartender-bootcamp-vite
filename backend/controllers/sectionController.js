@@ -16,11 +16,10 @@ const getSections = asyncHandler(async (req, res) => {
 //@access Public
 const getSectionByUrl = asyncHandler(async (req, res) => {
 	// const section = recursiveSearch(menuItems, req.params.sectionId);
-	console.log("firing");
 	const section = await Section.find({ url: req.params.sectionId });
-	console.log(section[0], "section in secitonRoutes");
+	// console.log(section[0], "section in secitonRoutes");
 	if (section) {
-		console.log(section[0], "controller");
+		// console.log(section[0], "controller");
 		return res.json(section[0]);
 	} else {
 		res.status(404);

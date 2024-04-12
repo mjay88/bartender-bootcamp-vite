@@ -34,6 +34,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 //Cookie parser middleware. Allows to access cookies
 app.use(cookieParser());
