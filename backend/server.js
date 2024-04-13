@@ -39,6 +39,12 @@ app.use(cors());
 //Cookie parser middleware. Allows to access cookies
 app.use(cookieParser());
 
+const corsOptions = {
+	origin: "http://localhost:3000", // replace with your frontend's origin
+	credentials: true, // this allows session cookies to be sent with the request
+};
+
+app.use(cors(corsOptions));
 // app.get("/", (req, res) => {
 // 	res.send("API is running...");
 // });

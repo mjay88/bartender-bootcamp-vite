@@ -12,17 +12,18 @@ export default defineConfig(() => {
 		server: {
 			open: true,
 			// host: "127.0.0.1",
+			host: "localhost",
 			port: 3000,
-			proxy: {
-				"/api": {
-					// target: "http://127.0.0.1:3000",
-					target: "http://localhost:5000",
-					changeOrigin: true,
-					ws: true,
-					secure: false,
-					rewrite: (path) => path.replace(/^\/api/, ""),
-				},
-			},
+			// proxy: {
+			// 	"/api": {
+			// 		// target: "http://127.0.0.1:3000",
+			// 		target: "http://localhost:5000",
+			// 		changeOrigin: true,
+			// 		ws: true,
+			// 		secure: false,
+			// 		rewrite: (path) => path.replace(/^\/api/, ""),
+			// 	},
+			// },
 		},
 
 		build: {
