@@ -41,5 +41,10 @@ export default defineConfig(() => {
 				},
 			],
 		},
+		test: {
+			// globals: true, when set to true automaticcally imports all your imports
+			environment: "jsdom",
+			setupFiles: "./test-setup/setupTests.js",
+		},
 	};
 });

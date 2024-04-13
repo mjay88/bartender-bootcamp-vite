@@ -8,7 +8,7 @@ import generateToken from "../utils/generateToken.js";
 //@route POST users/auth
 //@access Public
 const authUser = asyncHandler(async (req, res) => {
-	console.log(req, "user controller");
+	// console.log(req, "user controller");
 	const { email, password } = req.body;
 
 	const user = await User.findOne({ email });

@@ -40,34 +40,38 @@ const SidebarItems = ({ menuItems }) => {
 	// console.log(menuItems, "menuItems");
 	return (
 		<>
-			{menuItems.map((item, idx) => {
-				return (
-					<Sidebar.Nav key={idx}>
-						<Sidebar.Sub eventKey={0}>
-							<Sidebar.Sub.Toggle>
-								{item.url ? (
-									<LinkContainer
-										style={{ textDecoration: "none" }}
-										to={`/sections/${item.url}`}
-									>
-										<Sidebar.Nav.Title>{item.title}</Sidebar.Nav.Title>
-									</LinkContainer>
-								) : (
-									<>
-										<Sidebar.Nav.Icon />
-										<Sidebar.Nav.Title>{item.title}</Sidebar.Nav.Title>
-									</>
-								)}
-							</Sidebar.Sub.Toggle>
-							<Sidebar.Sub.Collapse>
-								<Sidebar.Nav>
-									{item?.submenu && <SidebarItems menuItems={item.submenu} />}
-								</Sidebar.Nav>
-							</Sidebar.Sub.Collapse>
-						</Sidebar.Sub>
-					</Sidebar.Nav>
-				);
-			})}
+			{menuItems ? (
+				menuItems.map((item, idx) => {
+					return (
+						<Sidebar.Nav key={idx}>
+							<Sidebar.Sub eventKey={0}>
+								<Sidebar.Sub.Toggle>
+									{item.url ? (
+										<LinkContainer
+											style={{ textDecoration: "none" }}
+											to={`/sections/${item.url}`}
+										>
+											<Sidebar.Nav.Title>{item.title}</Sidebar.Nav.Title>
+										</LinkContainer>
+									) : (
+										<>
+											<Sidebar.Nav.Icon />
+											<Sidebar.Nav.Title>{item.title}</Sidebar.Nav.Title>
+										</>
+									)}
+								</Sidebar.Sub.Toggle>
+								<Sidebar.Sub.Collapse>
+									<Sidebar.Nav>
+										{item?.submenu && <SidebarItems menuItems={item.submenu} />}
+									</Sidebar.Nav>
+								</Sidebar.Sub.Collapse>
+							</Sidebar.Sub>
+						</Sidebar.Nav>
+					);
+				})
+			) : (
+				<span>{"failed to load menu items "}</span>
+			)}
 		</>
 	);
 };
