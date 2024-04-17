@@ -6,16 +6,16 @@ import "./assets/styles/index.css";
 import "./assets/styles/custom.scss";
 import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals.js";
-import { router } from "./router.jsx";
+import { routes } from "./router.jsx";
 import { Provider } from "react-redux";
 import store from "./store.js";
-import { RouterProvider } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<RouterProvider router={router}>
+			<RouterProvider router={createBrowserRouter(routes)}>
 				<App />
 			</RouterProvider>
 		</Provider>

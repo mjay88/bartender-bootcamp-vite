@@ -61,14 +61,20 @@ const RegistrationScreen = () => {
 	};
 
 	return (
-		<FormContainer>
+		<FormContainer data-testid="form-container">
 			<h1>Sign Up</h1>
 
 			<ToastContainer />
-			<Form noValidate validated={validated} onSubmit={submitHandler}>
+			<Form
+				data-testid="form"
+				noValidate
+				validated={validated}
+				onSubmit={submitHandler}
+			>
 				<Form.Group controlId="name" className="my-3">
 					<Form.Label>Name</Form.Label>
 					<Form.Control
+						data-testid="name"
 						type="text"
 						placeholder="Enter name"
 						value={name}
@@ -85,6 +91,7 @@ const RegistrationScreen = () => {
 				<Form.Group controlId="email" className="my-3">
 					<Form.Label>Email Address</Form.Label>
 					<Form.Control
+						data-testid="email"
 						type="email"
 						placeholder="Enter email"
 						value={email}
@@ -100,6 +107,7 @@ const RegistrationScreen = () => {
 				<Form.Group controlId="password" className="my-3">
 					<Form.Label>Password</Form.Label>
 					<Form.Control
+						data-testid="password"
 						type="password"
 						placeholder="Enter password"
 						value={password}
@@ -115,6 +123,7 @@ const RegistrationScreen = () => {
 				<Form.Group controlId="confirmPassword" className="my-3">
 					<Form.Label>Confirm Password</Form.Label>
 					<Form.Control
+						data-testid="confirmPassword"
 						type="password"
 						placeholder="Confirm password"
 						value={confirmPassword}

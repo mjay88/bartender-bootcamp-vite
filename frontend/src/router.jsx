@@ -8,7 +8,7 @@ import EditProfileScreen from "./screens/EditProfileScreen";
 import UserProfileScreen from "./screens/UserProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
 import LandingPage from "./components/LandingPage";
-export const router = createBrowserRouter([
+export const routes = [
 	//should utils be a custom hook?
 	//should I be using a loader for routes?
 	//do I need custom scss file, can I just put it into, index.css
@@ -37,4 +37,4 @@ export const router = createBrowserRouter([
 	{ path: "/login", element: <LoginScreen /> },
 	{ path: "/landing-page", element: <LandingPage /> },
 	{ path: "/register", element: <RegistrationScreen /> },
-]);
+];
