@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import path from "path";
+// import { fileURLToPath } from "url";
+// import { dirname } from "path";
+// import path from "path";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
@@ -40,7 +40,7 @@ app.use(cors());
 app.use(cookieParser());
 
 const corsOptions = {
-	origin: "http://localhost:3000", // replace with your frontend's origin
+	origin: "http://localhost:8000", // replace with your frontend's origin
 	credentials: true, // this allows session cookies to be sent with the request
 };
 
