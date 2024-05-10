@@ -40,13 +40,7 @@ app.use(cors());
 app.use(cookieParser());
 
 const corsOptions = {
-	origin: function (origin, callback) {
-		if (origin.startsWith("http://localhost:5000")) {
-			callback(null, true);
-		} else {
-			callback(new Error("Not allowed by CORS"));
-		}
-	},
+	origin: "http://localhost:5000", // replace with your frontend's origin
 	credentials: true, // this allows session cookies to be sent with the request
 };
 
