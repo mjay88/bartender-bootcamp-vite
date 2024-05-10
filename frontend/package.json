@@ -6,6 +6,7 @@
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.1.0",
 		"axios": "^1.6.7",
+		"bartender-bootcamp": "file:..",
 		"bootstrap": "^5.3.2",
 		"react": "^18.2.0",
 		"react-bootstrap": "^2.9.2",

@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 // import { fileURLToPath } from "url";
-// import { dirname } from "path";
-// import path from "path";
+import { dirname } from "path";
+import path from "path";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
@@ -51,6 +51,20 @@ app.use(cors(corsOptions));
 
 app.use("/sections", sectionRoutes);
 app.use("/users", userRoutes);
+const __dirname = path.resolve(); //set __dirname to current directory
+//for production
+if (process.env.NODE_ENV === "production") {
+	//set static folder
+	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+	//any route that is not api will be redirected to index.html
+	app.get("*", (req, res) =>
+		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+	);
+} else {
+	app.get("/", (req, res) => {
+		res.send("API running beeyatch");
+	});
+}
 //use errorMiddleware
 app.use(notFound);
 app.use(errorHandler);

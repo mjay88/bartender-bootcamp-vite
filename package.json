@@ -10,7 +10,8 @@
 		"client": "npm start --prefix frontend",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"data:import": "node backend/seeder.js",
-		"data:destroy": "node backend/seeder.js -d"
+		"data:destroy": "node backend/seeder.js -d",
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
 	},
 	"author": "Michael Jarrett",
 	"license": "MIT",
@@ -29,6 +30,6 @@
 		"concurrently": "^8.2.2",
 		"dotenv": "^16.4.1",
 		"nodemon": "^3.0.3",
-		"sass": "^1.74.1"
+		"sass": "^1.77.0"
 	}
 }

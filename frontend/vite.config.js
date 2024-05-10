@@ -27,7 +27,7 @@ export default defineConfig(() => {
 		build: {
 			manifest: true,
 			rollupOptions: {
-				input: "./src/App.jsx",
+				input: ["./src/App.jsx", "./index.html"],
 			},
 		},
 
@@ -39,6 +39,9 @@ export default defineConfig(() => {
 					replacement: "$1",
 				},
 			],
+		},
+		css: {
+			cssCodeSplit: true,
 		},
 		test: {
 			// globals: true, when set to true automaticcally imports all your imports
