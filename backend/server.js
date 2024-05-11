@@ -40,7 +40,7 @@ app.use(cors());
 app.use(cookieParser());
 
 const corsOptions = {
-	origin: "http://localhost:5000", // replace with your frontend's origin
+	origin: /^(http:\/\/localhost:5000)/gm, // replace with your frontend's origin
 	credentials: true, // this allows session cookies to be sent with the request
 };
 
