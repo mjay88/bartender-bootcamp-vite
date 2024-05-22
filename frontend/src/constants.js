@@ -1,7 +1,7 @@
-// export const BASE_URL =
-// 	process.env.NODE_ENV === "development" ? "http://localhost:5000" : "";
+export const BASE_URL =
+	process.env.NODE_ENV === "development" ? "http://localhost:5000" : "";
 
-export const BASE_URL = "http://localhost:5000"; //solves cors issue
+// export const BASE_URL = "http://localhost:5000"; //solves cors issue
 export const SECTIONS_URL = "/sections";
 export const USERS_URL = "/users";
 // export const QUIZ_URL = "/api/users";
