@@ -11,7 +11,7 @@ export default defineConfig(() => {
 			open: true,
 			// host: "127.0.0.1",
 			host: "localhost",
-			port: 5000,
+			port: 3000,
 			// proxy: {
 			// 	"/api": {
 			// 		// target: "http://127.0.0.1:3000",

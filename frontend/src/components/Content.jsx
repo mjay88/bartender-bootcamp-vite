@@ -11,28 +11,17 @@ export default function Content() {
 	// const [data, setData] = useState({});
 	// console.log(data, "data in content");
 	const { sectionId } = useParams();
-	console.log(sectionId, "sectionId");
-	console.log(SECTIONS_URL, "sections url");
-	console.log(`${SECTIONS_URL}/${sectionId}`);
+
 	const {
 		data: content,
 		isLoading,
 		error,
 	} = useGetSectionByUrlQuery(sectionId);
-	// useEffect(() => {
-	// 	const fetchStuff = async () => {
-	// 		const res = await fetch(`${SECTIONS_URL}/${sectionId}`);
-	// 		const data = await res.json();
-	// 		setData(data);
-	// 	};
-	// 	fetchStuff();
-	// }, []);
 
-	console.log(content, "content");
-	console.log(error, "error from sueGetSectionBuURlQuery");
+	// console.log(content, "content");
+	// console.log(error, "error from sueGetSectionBuURlQuery");
 	return (
 		<div>
-			Content for {sectionId}
 			<>
 				{isLoading ? (
 					<Loader />
